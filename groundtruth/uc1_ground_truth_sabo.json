@@ -7,24 +7,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.cocome.tradingsystem.inventory.application.store.ProductTO.barcode",
-		"probable_sabo_type": "Variable",
-		"secdfd": "barcode",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.cocome.tradingsystem.cashdeskline.events.ProductBarcodeNotValidEvent.barcode",
-		"probable_sabo_type": "Variable",
-		"secdfd": "barcode",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.cocome.tradingsystem.inventory.data.enterprise.Product.barcode",
-		"probable_sabo_type": "Variable",
-		"secdfd": "barcode",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "org.cocome.tradingsystem.cashdeskline.events.ProductBarcodeScannedEvent",
         "sabo_type": "Type",

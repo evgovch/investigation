@@ -1,0 +1,5394 @@
+{
+  "groundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth\\add_health_record_ground_truth_sabo.json",
+  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SBOMs\\atmsimulator.sbom.json",
+  "checkedLabels": [
+    "Operation",
+    "Type",
+    "Variable"
+  ],
+  "summary": {
+    "totalGroundtruthEntries": 19,
+    "groundtruthEntriesWithSabo": 19,
+    "totalSaboNodes": 734,
+    "totalCheckedNodes": 523,
+    "conclusions": {
+      "INVALID_SECDFD_TYPE": 0,
+      "SECDFD_TYPE_UNDETERMINED": 0,
+      "SECDFD_TYPE_UNDEFINED": 0,
+      "GROUND_TRUTH_NOT_FOUND": 216,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 32,
+      "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 235,
+      "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 40,
+      "SECDFD_TYPE_DOES_NOT_MATCH": 0,
+      "SECDFD_TYPE_MATCHES": 0,
+      "GROUND_TRUTH_ENTRIES_NOT_MATCHED": 19
+    },
+    "unmatchedGroundtruthEntries": [
+      {
+        "sabo": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction#addHealthRecord(long,edu.ncsu.csc.itrust.beans.forms.HealthRecordForm,long)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction.addHealthRecord(long,HealthRecordForm,long):String",
+        "secdfd": "add_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.dao.mysql.OfficeVisitDAO#getOfficeVisit(long)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.dao.mysql.OfficeVisitDAO.getOfficeVisit(long):OfficeVisitBean",
+        "secdfd": "get_office_visit",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator#validateBaby(edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator.validateBaby(HealthRecordForm):void",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction#transferFormBaby(long,edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction.transferFormBaby(long,HealthRecordForm):HealthRecord",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator#validateYouth(edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator.validateYouth(HealthRecordForm):void",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction#transferFormYouth(long,edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction.transferFormYouth(long,HealthRecordForm):HealthRecord",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator#validate(edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.validate.HealthRecordFormValidator.validate(HealthRecordForm):void",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction#transferForm(long,edu.ncsu.csc.itrust.beans.forms.HealthRecordForm)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.action.EditHealthHistoryAction.transferForm(long,HealthRecordForm):HealthRecord",
+        "secdfd": "create_record",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.dao.mysql.OfficeVisitDAO#getOfficeVisit(long)",
+        "sabo_type": "Operation",
+        "pm": "edu.ncsu.csc.itrust.dao.mysql.OfficeVisitDAO.getOfficeVisit(long):OfficeVisitBean",
+        "secdfd": "get_office_visit",
+        "secdfd_type": "process"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "long",
+        "secdfd": "pid",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "long",
+        "secdfd": "ovID",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "int",
+        "secdfd": "patient_age",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.beans.OfficeVisitBean",
+        "sabo_type": "Type",
+        "pm": "edu.ncsu.csc.itrust.beans.OfficeVisitBean",
+        "secdfd": "office_visit",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.sql.ResultSet",
+        "secdfd": "office_visit",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.beans.forms.HealthRecordForm",
+        "sabo_type": "Type",
+        "pm": "edu.ncsu.csc.itrust.beans.forms.HealthRecordForm",
+        "secdfd": "record_form",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "edu.ncsu.csc.itrust.beans.HealthRecord",
+        "sabo_type": "Type",
+        "pm": "edu.ncsu.csc.itrust.beans.HealthRecord",
+        "secdfd": "record",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "sucessfully_stored",
+        "secdfd_type": "asset"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.sql.Connection",
+        "secdfd": "db",
+        "secdfd_type": "data_store"
+      },
+      {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.sql.PreparedStatement",
+        "secdfd": "db",
+        "secdfd_type": "data_store"
+      }
+    ]
+  },
+  "checkedNodes": [
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[0]:operatorPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[5]:envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getMessageCode()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.KEYBOARD_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#completeTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.AVAILABLE_BALANCE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.FINAL_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI.cardPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.gui",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getOperatorPanel()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.ENVELOPE_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readMenuChoice(java.lang.String,java.lang.String[]):param[0]:prompt",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[3]:keyboard",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#NetworkToBank(atm.physical.Log,java.net.InetAddress):param[0]:log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getAmount()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.KEYBOARD_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMMain#main(java.lang.String[]):param[0]:args",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#setInitialCash(banking.Money):param[0]:initialCash",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#readInput(int,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAY_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.INITIATE_DEPOSIT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Card.number",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole$Cancelled#Cancelled()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.BillsPanel.billsNumberField",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.READING_PIN_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#ATM(int,java.lang.String,java.lang.String,java.net.InetAddress)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getNetworkToBank()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.SHOW_LOG_BUTTON_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCashDispenser#animateDispensingCash(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay.currentDisplayLine",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer.from",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[2]:cardReader",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.MENU_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#CashDispenser(atm.physical.Log)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#readInput(int,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#Withdrawal(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor.inserted",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer.to",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure#Failure(java.lang.String):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader#animateInsertion()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#printLogLine(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#enterKeyPressed()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.PERFORMING_TRANSACTION_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.networkToBank",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#getSimulatedBank()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCashDispenser#animateDispensingCash(banking.Money):param[0]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#switchChanged(boolean)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#toString()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#inquiry(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.KEYBOARD_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#Transfer(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#setEcho(java.lang.String):param[0]:echo",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$InvalidPIN#InvalidPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Card#Card(int):param[0]:number",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole$Cancelled",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[2]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.toAccount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#Withdrawal(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.EnvelopeAcceptor.log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getToAccount()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#Receipt(atm.ATM,banking.Card,atm.transaction.Transaction,banking.Balances):param[2]:transaction",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#clearKeyPressed()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#Transaction(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.ReceiptPrinter#printReceipt(banking.Receipt)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.OPERATOR_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure#Failure(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#withdrawal(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.GETTING_SPECIFICS_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#completeTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.fromAccount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader#ejectCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#completeDeposit(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[1]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#sendMessage(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#subtract(banking.Money):param[0]:amountToSubtract",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[6]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getFromAccount()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMMain#ATMMain()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.PIN_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAY_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.state",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.TRANSFER",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.switchOn",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logResponse(banking.Status):param[0]:response",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.PIN_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#run()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[1]:cardReader",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.maxValue",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[3]:display",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[4]:keyboard",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getEnvelopeAcceptor()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPENSER_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#ATM(int,java.lang.String,java.lang.String,java.net.InetAddress):param[3]:bankAddress",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getCashDispenser()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter.printArea",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.CardPanel#readCardNumber()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#Withdrawal(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay.displayLine",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#Transfer(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank.log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Success#isInvalidPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.cardReader",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.SHOW_LOG_BUTTON_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader#readCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Success#getMessage()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session#Session(atm.ATM)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readPIN(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#display(java.lang.String):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.place",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.state",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPENSER_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#dispenseCash(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader#CardReader(atm.ATM):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel#LogPanel(simulation.GUI)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#readCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.SENDING_TO_BANK_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter#println(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$InvalidPIN",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logSend(banking.Message):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#ejectCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#getGUI()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money.cents",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.BLANK_DISPLAY_LINE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#SimKeyboard(simulation.SimDisplay,simulation.SimEnvelopeAcceptor):param[1]:envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[5]:cashDispenser",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#add(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#display(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCashDispenser.label",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#ATM(int,java.lang.String,java.lang.String,java.net.InetAddress):param[1]:place",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#getAvailable()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.BillsPanel#BillsPanel()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.AccountInformation#AccountInformation()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.OPERATOR_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Card#getNumber()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#getSerialNumber()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.display",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logResponse(banking.Status)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int):param[2]:width",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#performShutdown()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit.amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#getSerialNumber()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.READER_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAY_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getPlace()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.id",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.READER_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.nextSerialNumber",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session#Session(atm.ATM):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.COMPLETE_DEPOSIT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter#SimReceiptPrinter()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.serialNumber",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank.bankAddress",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure#isSuccess()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#display(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader#animateRetention()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(int,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.OperatorPanel#OperatorPanel(atm.ATM):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#Withdrawal(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor#acceptEnvelope()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#initiateDeposit(banking.Message):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#acceptEnvelope()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#setBalances(banking.Money,banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader#SimCardReader(simulation.Simulation)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel#println(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(int):param[0]:dollars",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readPIN(java.lang.String):param[0]:prompt",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.READER_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#Inquiry(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#getInsets()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$InvalidPIN#isInvalidPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#setEcho(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#checkCashOnHand(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit.to",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#transfer(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTER_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#subtract(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.BALANCE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt.balancesPortion",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.WITHDRAWAL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#dispenseCash(banking.Money):param[0]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.keyboard",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPENSER_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#setPIN(int):param[0]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTER_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#sendMessage(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#performInvalidPINExtension()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#getLines()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMApplet",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.state",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.PIN",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.customerConsole",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.OperatorPanel.atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session#setPIN(int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#Transfer(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.AccountInformation",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader.originalBounds",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#readCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCashDispenser#SimCashDispenser()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#Inquiry(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#withdrawal(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.mode",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session#performSession()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#Transaction(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getID()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(int,int):param[0]:dollars",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#completeDeposit(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#getInitialCash()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader#animateEjection()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[4]:fromAccount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt.detailsPortion",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#retainCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#inquiry(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#dispenseCash(banking.Money):param[0]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader#CardReader(atm.ATM)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.OperatorPanel#OperatorPanel(atm.ATM)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.ENVELOPE_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#Transaction(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.EnvelopeAcceptor#acceptEnvelope()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#Transfer(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readMenuChoice(java.lang.String,java.lang.String[]):param[1]:menu",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances.available",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[1]:operatorPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.OPERATOR_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#CustomerConsole()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#sendMessage(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#Transfer(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#SimDisplay()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction$CardRetained",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.ReceiptPrinter",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#transfer(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure#getMessage()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI.billsPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#readInput(int,int):param[0]:mode",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#getSpecificsFromCustomer()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor.MAXIMUM_WAIT_TIME",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.bankName",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int):param[3]:height",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.CardPanel#CardPanel()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#cardInserted()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#Simulation(atm.ATM):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#inquiry(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI.mainLayout",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session#setPIN(int):param[0]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#display(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.CardPanel.cardNumberField",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.cashDispenser",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter#println(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#Receipt(atm.ATM,banking.Card,atm.transaction.Transaction,banking.Balances):param[3]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure.message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTER_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt.headingPortion",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#openConnection()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#printLogLine(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#setEcho(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#printLogLine(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#showCard(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#toString()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#display(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#handleMessage(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Success",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "data-provider",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#switchOn()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor#SimEnvelopeAcceptor()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.OFF_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.WITHDRAWALS_TODAY",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#printReceiptLine(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#readInput(int,int):param[1]:maxValue",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.EnvelopeAcceptor#EnvelopeAcceptor(atm.physical.Log):param[0]:log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status#isSuccess()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Predicate",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.cancelled",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#digitKeyPressed(int):param[0]:digit",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#readInput(int,int):param[1]:maxValue",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#Transaction(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#sendMessage(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.ENVELOPE_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.CHOOSING_TRANSACTION_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getCustomerConsole()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.MENU_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPENSER_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTER_ROW",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#SimKeyboard(simulation.SimDisplay,simulation.SimEnvelopeAcceptor):param[0]:display",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readMenuChoice(java.lang.String,java.lang.String[])",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.ReceiptPrinter#ReceiptPrinter()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#switchOff()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPENSER_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#getSpecificsFromCustomer()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#Balances()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#Withdrawal(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status#getMessage()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.AMOUNT_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.receiptPrinter",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#getInitialCash()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.EnvelopeAcceptor#EnvelopeAcceptor(atm.physical.Log)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(int,int):param[1]:cents",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.IDLE_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#setBalances(banking.Money,banking.Money):param[1]:available",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.simulatedBank",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[6]:receiptPrinter",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances.total",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#SimulatedBank()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#setPIN(int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#checkCashOnHand(banking.Money):param[0]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTER_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.cardInserted",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#add(banking.Money):param[0]:amountToAdd",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#printLogLine(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[2]:display",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getLog()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.AMOUNT_MODE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[0]:gui",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.ENVELOPE_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logCashDispensed(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#initiateDeposit(banking.Message)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.theInstance",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#handleMessage(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getCardReader()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readAmount(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int):param[0]:row",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.BillsPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#closeConnection()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.AccountInformation.ACCOUNT_ABBREVIATIONS",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#switchChanged(boolean):param[0]:on",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Success#isSuccess()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Predicate",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAYABLE_LINES",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.SHOW_LOG_BUTTON_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.TOTAL_ROWS",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status#isInvalidPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#Log()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.COMPLETING_TRANSACTION_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#Receipt(atm.ATM,banking.Card,atm.transaction.Transaction,banking.Balances):param[1]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser.log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.BillsPanel#readBills()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#completeTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getReceiptPrinter()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logSend(banking.Message)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel#LogPanel(simulation.GUI):param[0]:gui",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAY_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.OPERATOR_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status#toString()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#Receipt(atm.ATM,banking.Card,atm.transaction.Transaction,banking.Balances):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#performStartup()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#lessEqual(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMMain#main(java.lang.String[])",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[3]:serialNumber",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.PRINTING_RECEIPT_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal.from",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.INQUIRY",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.TRANSACTION_TYPES_MENU",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#NetworkToBank(atm.physical.Log,java.net.InetAddress)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#lessEqual(banking.Money):param[0]:compareTo",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMApplet#init()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#CashDispenser(atm.physical.Log):param[0]:log",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMApplet#ATMApplet()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.operatorPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Card#Card(int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.receiptPrinter",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#completeTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logCashDispensed(banking.Money):param[0]:amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.OperatorPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#digitKeyPressed(int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#clearDisplay()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.INVALID_PIN_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI.atmPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.ReceiptPrinter#printReceipt(banking.Receipt):param[0]:receipt",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.IDLE_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#GUI(simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[4]:cashDispenser",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer.amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#printReceiptLine(java.lang.String):param[0]:text",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int):param[1]:col",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimOperatorPanel#SimOperatorPanel(simulation.Simulation)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#NetworkToBank(atm.physical.Log,java.net.InetAddress):param[1]:bankAddress",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.KEYBOARD_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal.amount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel.logPrintArea",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.LogPanel#println(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#getBankName()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#setEcho(java.lang.String):param[0]:echo",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimDisplay#clearDisplay()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.DISPLAY_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.serialNumber",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI.logPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#transfer(banking.Message,banking.Balances):param[0]:message",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[7]:receiptPrinter",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.READER_FILL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#Inquiry(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.KEYBOARD_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status#Status()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#Inquiry(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction$CardRetained#CardRetained()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.operatorPanel",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(banking.Money):param[0]:toCopy",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.OperatorPanel#getInitialCash()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.SERVING_CUSTOMER_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Withdrawal#completeTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.TOTAL_COLS",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#handleMessage(banking.Message,banking.Balances):param[1]:balances",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader.atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#display(java.lang.String)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Flow",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#getInstance()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimReceiptPrinter.take",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.NetworkToBank#sendMessage(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.EnvelopeAcceptor",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.SHOW_LOG_BUTTON_WIDTH",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.READER_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#getSpecificsFromCustomer()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[0]:messageCode",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[5]:toAccount",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.AccountInformation.ACCOUNT_NAMES",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#setBalances(banking.Money,banking.Money):param[0]:total",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Receipt#Receipt(atm.ATM,banking.Card,atm.transaction.Transaction,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.bankAddress",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimEnvelopeAcceptor#cancelRequested()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Money#Money(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimOperatorPanel#SimOperatorPanel(simulation.Simulation):param[0]:simulation",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CardReader#retainCard()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry#Inquiry(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#getSpecificsFromCustomer()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.ENVELOPE_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#withdrawal(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank#completeDeposit(banking.Message,banking.Balances)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#Simulation(atm.ATM)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.SHOW_LOG_BUTTON_HEIGHT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transfer#getSpecificsFromCustomer()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.display",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel#ATMPanel(simulation.GUI,simulation.SimOperatorPanel,simulation.SimCardReader,simulation.SimDisplay,simulation.SimKeyboard,simulation.SimCashDispenser,simulation.SimEnvelopeAcceptor,simulation.SimReceiptPrinter):param[6]:envelopeAcceptor",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Success#Success()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation.cardReader",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message.messageCode",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTABLE_LINES",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "ATMMain",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Inquiry.from",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser.cashOnHand",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances#getTotal()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "DataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard.currentInput",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#ATM(int,java.lang.String,java.lang.String,java.net.InetAddress):param[0]:id",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCashDispenser",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#showCard(java.lang.String):param[0]:cardName",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimOperatorPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.READING_CARD_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.DAILY_WITHDRAWAL_LIMIT",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimCardReader#SimCardReader(simulation.Simulation):param[0]:simulation",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.Simulation#dispenseCash(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#ATM(int,java.lang.String,java.lang.String,java.net.InetAddress):param[2]:bankName",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "External Entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.Log#logEnvelopeAccepted()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.GUI#makeConstraints(int,int,int,int,int):param[4]:fill",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure#isInvalidPIN()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank.ACCOUNT_NUMBER",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CustomerConsole#readAmount(java.lang.String):param[0]:prompt",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimulatedBank$Failure",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "data",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.CardPanel",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Card",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "entity",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.PRINTABLE_CHARS",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#readInput(int,int):param[0]:mode",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction.ASKING_DO_ANOTHER_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Message",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": null,
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#Transaction(atm.ATM,atm.Session,banking.Card,int):param[0]:atm",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#cancelKeyPressed()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.SimKeyboard#SimKeyboard(simulation.SimDisplay,simulation.SimEnvelopeAcceptor)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "simulation.ATMPanel.OPERATOR_COL",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Transaction#performTransaction()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int):param[3]:pin",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.Session.EJECTING_CARD_STATE",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Balances",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "dataStore",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM.cashDispenser",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Undetermined",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.physical.CashDispenser#setInitialCash(banking.Money)",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "banking.Status",
+      "labels": [
+        "Type"
+      ],
+      "primarySecdfdType": "process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int):param[2]:card",
+      "labels": [
+        "Variable"
+      ],
+      "primarySecdfdType": "Asset",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    },
+    {
+      "id": "atm.ATM#cardInserted()",
+      "labels": [
+        "Operation"
+      ],
+      "primarySecdfdType": "Process",
+      "groundTruthSecdfdTypes": [],
+      "groundTruthEntryCount": 0,
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
+    }
+  ]
+}

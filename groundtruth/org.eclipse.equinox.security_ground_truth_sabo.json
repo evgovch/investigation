@@ -73,18 +73,6 @@
         "secdfd_type": "asset",
         "probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.eclipse.equinox.internal.security.storage.friends.ReEncrypter$TmpElement.path",
-		"probable_sabo_type": "Variable",
-		"secdfd": "fieldID",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.eclipse.equinox.internal.security.storage.PersistedPath.path",
-		"probable_sabo_type": "Variable",
-		"secdfd": "fieldID",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "NOT_FOUND",
         "sabo_type": "UNKNOWN",
@@ -108,18 +96,6 @@
         "secdfd": "Cache",
         "secdfd_type": "data_store",
         "probable_sabo_type": "Type"
-    },
-    {
-        "probable_sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.passwordCache",
-        "probable_sabo_type": "Variable",
-        "secdfd": "Cache",
-        "secdfd_type": "data_store"
-    },
-    {
-        "probable_sabo": "org.eclipse.equinox.internal.security.storage.PersistedPath.path",
-        "probable_sabo_type": "Variable",
-        "secdfd": "Cache",
-        "secdfd_type": "data_store"
     },
     {
         "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#node(java.lang.String)",

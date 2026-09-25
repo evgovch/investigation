@@ -105,12 +105,6 @@
         "secdfd_type": "asset",
         "probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "policy.KeyPrincipal.publicKey",
-		"probable_sabo_type": "Variable",
-		"secdfd": "BobPublicKey",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "policy.KeyPrincipal",
         "sabo_type": "Type",
@@ -134,24 +128,6 @@
         "secdfd_type": "asset",
         "probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "jif.lang.AbstractPrincipal",
-		"probable_sabo_type": "Type",
-		"secdfd": "Principal",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "policy.PrincipalWrapper.p",
-		"probable_sabo_type": "Variable",
-		"secdfd": "Principal",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "jif.lang.Principal",
-		"probable_sabo_type": "Type",
-		"secdfd": "Principal",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "policy.KeyPrincipal",
         "sabo_type": "Type",

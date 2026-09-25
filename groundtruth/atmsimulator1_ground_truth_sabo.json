@@ -14,30 +14,6 @@
 		"secdfd_type": "asset",
 		"probable_sabo_type": "Type"
 	},
-	{
-		"probable_sabo": "banking.Message.pin",
-		"probable_sabo_type": "Variable",
-		"secdfd": "PIN",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "simulation.SimulatedBank.PIN",
-		"probable_sabo_type": "Variable",
-		"secdfd": "PIN",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "atm.transaction.Transaction.pin",
-		"probable_sabo_type": "Variable",
-		"secdfd": "PIN",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "atm.Session.pin",
-		"probable_sabo_type": "Variable",
-		"secdfd": "PIN",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "NOT_FOUND",
         "sabo_type": "UNKNOWN",

@@ -7,24 +7,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.productId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "productID",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Product.productId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "productID",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Item.productId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "productID",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "org.mybatis.jpetstore.domain.Product",
         "sabo_type": "Type",
@@ -40,24 +22,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.itemId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "itemID",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.LineItem.itemId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "itemID",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Item.itemId",
-		"probable_sabo_type": "Variable",
-		"secdfd": "itemID",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "org.mybatis.jpetstore.domain.Item",
         "sabo_type": "Type",
@@ -94,18 +58,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Account.username",
-		"probable_sabo_type": "Variable",
-		"secdfd": "username",
-		"secdfd_type": "asset"
-	},
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Order.username",
-		"probable_sabo_type": "Variable",
-		"secdfd": "username",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "NOT_FOUND",
         "sabo_type": "UNKNOWN",
@@ -114,12 +66,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Account.password",
-		"probable_sabo_type": "Variable",
-		"secdfd": "password",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "NOT_FOUND",
         "sabo_type": "UNKNOWN",
@@ -128,12 +74,6 @@
         "secdfd_type": "asset",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.keyword",
-		"probable_sabo_type": "Variable",
-		"secdfd": "keyword",
-		"secdfd_type": "asset"
-	},
     {
         "sabo": "org.mybatis.jpetstore.domain.Cart",
         "sabo_type": "Type",
@@ -179,12 +119,6 @@
         "secdfd_type": "data_store",
 		"probable_sabo_type": "Type"
     },
-	{
-		"probable_sabo": "org.mybatis.jpetstore.domain.Cart.itemMap",
-		"probable_sabo_type": "Variable",
-		"secdfd": "CartDB",
-		"secdfd_type": "data_store"
-	},
     {
         "sabo": "org.mybatis.jpetstore.mapper.AccountMapper",
         "sabo_type": "Type",
