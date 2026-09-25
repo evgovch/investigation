@@ -1,0 +1,419 @@
+[
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "productID",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.productId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "productID",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Product.productId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "productID",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Item.productId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "productID",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Product",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Product",
+        "secdfd": "product",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "itemID",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.itemId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "itemID",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.LineItem.itemId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "itemID",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Item.itemId",
+		"probable_sabo_type": "Variable",
+		"secdfd": "itemID",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Item",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Item",
+        "secdfd": "item",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.CartItem",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.CartItem",
+        "secdfd": "item",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.LineItem",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.LineItem",
+        "secdfd": "item",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Account",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Account",
+        "secdfd": "account_info",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "username",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Account.username",
+		"probable_sabo_type": "Variable",
+		"secdfd": "username",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Order.username",
+		"probable_sabo_type": "Variable",
+		"secdfd": "username",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "password",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Account.password",
+		"probable_sabo_type": "Variable",
+		"secdfd": "password",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "keyword",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.web.actions.CatalogActionBean.keyword",
+		"probable_sabo_type": "Variable",
+		"secdfd": "keyword",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Cart",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Cart",
+        "secdfd": "cart",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.CartItem",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.CartItem",
+        "secdfd": "cart",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Order",
+        "secdfd": "order",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.HashMap",
+        "secdfd": "CartDB",
+        "secdfd_type": "data_store",
+		"probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.Map",
+        "secdfd": "CartDB",
+        "secdfd_type": "data_store",
+		"probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.AbstractMap",
+        "secdfd": "CartDB",
+        "secdfd_type": "data_store",
+		"probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.mybatis.jpetstore.domain.Cart.itemMap",
+		"probable_sabo_type": "Variable",
+		"secdfd": "CartDB",
+		"secdfd_type": "data_store"
+	},
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.mapper.AccountMapper",
+        "secdfd": "AccountDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.service.AccountService",
+        "secdfd": "AccountDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Account",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.domain.Account",
+        "secdfd": "AccountDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.OrderMapper",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.mapper.OrderMapper",
+        "secdfd": "Orders_And_ProductsDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.ProductMapper",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.mapper.ProductMapper",
+        "secdfd": "Orders_And_ProductsDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.OrderService",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.service.OrderService",
+        "secdfd": "Orders_And_ProductsDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.CatalogService",
+        "sabo_type": "Type",
+        "pm": "org.mybatis.jpetstore.service.CatalogService",
+        "secdfd": "Orders_And_ProductsDB",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.web.actions.AccountActionBean#isAuthenticated()",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.web.actions.AccountActionBean.isAuthenticated():boolean",
+        "secdfd": "Authenticate",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.ProductMapper#searchProductList(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.ProductMapper.searchProductList(String):List",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.ProductMapper#getProductListByCategory(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.ProductMapper.getProductListByCategory(String):List",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.ProductMapper#getProduct(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.ProductMapper.getProduct(String):Product",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.CatalogService#searchProductList(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.CatalogService.searchProductList(String):List",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.CatalogService#getProductListByCategory(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.CatalogService.getProductListByCategory(String):List",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.CatalogService#getProduct(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.CatalogService.getProduct(String):Product",
+        "secdfd": "Search_Products",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order#initOrder(org.mybatis.jpetstore.domain.Account,org.mybatis.jpetstore.domain.Cart)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Order.initOrder(Account,Cart):void",
+        "secdfd": "Purchase_Order",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.OrderService#insertOrder(org.mybatis.jpetstore.domain.Order)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.OrderService.insertOrder(Order):void",
+        "secdfd": "Purchase_Order",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Cart#addItem(org.mybatis.jpetstore.domain.Item,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Cart.addItem(Item,boolean):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Cart#removeItemById(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Cart.removeItemById(String):Item",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Cart#incrementQuantityByItemId(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Cart.incrementQuantityByItemId(String):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order#addLineItem(org.mybatis.jpetstore.domain.LineItem)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Order.addlineitem(CartItem):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order#addLineItem(org.mybatis.jpetstore.domain.CartItem)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Order.addlineitem(CartItem):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order#addLineItem(org.mybatis.jpetstore.domain.LineItem)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Order.addlineitem(LineItem):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.domain.Order#addLineItem(org.mybatis.jpetstore.domain.CartItem)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.domain.Order.addlineitem(LineItem):void",
+        "secdfd": "AddRemove_Items",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#insertAccount(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.insertAccount(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#updateAccount(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.updateAccount(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#getAccount(java.lang.String,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.getAccount(String,String):Account",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#getAccount(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.getAccount(String,String):Account",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#getAccount(java.lang.String,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.getAccount(String):Account",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.service.AccountService#getAccount(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.service.AccountService.getAccount(String):Account",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.AccountMapper#insertAccount(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.AccountMapper.insertAccount(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.AccountMapper#insertProfile(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.AccountMapper.insertProfile(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.AccountMapper#updateAccount(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.AccountMapper.updateAccount(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.mybatis.jpetstore.mapper.AccountMapper#updateProfile(org.mybatis.jpetstore.domain.Account)",
+        "sabo_type": "Operation",
+        "pm": "org.mybatis.jpetstore.mapper.AccountMapper.updateProfile(Account):void",
+        "secdfd": "Manage_Account",
+        "secdfd_type": "process"
+    }
+]

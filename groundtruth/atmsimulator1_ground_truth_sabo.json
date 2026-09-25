@@ -1,0 +1,401 @@
+[
+    {
+        "sabo": "banking.Card",
+        "sabo_type": "Type",
+        "pm": "banking.Card",
+        "secdfd": "card",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "int",
+		"secdfd": "PIN",
+		"secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+	},
+	{
+		"probable_sabo": "banking.Message.pin",
+		"probable_sabo_type": "Variable",
+		"secdfd": "PIN",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "simulation.SimulatedBank.PIN",
+		"probable_sabo_type": "Variable",
+		"secdfd": "PIN",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "atm.transaction.Transaction.pin",
+		"probable_sabo_type": "Variable",
+		"secdfd": "PIN",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "atm.Session.pin",
+		"probable_sabo_type": "Variable",
+		"secdfd": "PIN",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "keyboard_input",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "display_view",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "banking.Status",
+        "sabo_type": "Type",
+        "pm": "banking.Status",
+        "secdfd": "status",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "simulation.SimulatedBank$Failure",
+        "sabo_type": "Type",
+        "pm": "simulation.SimulatedBank$Failure",
+        "secdfd": "status",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "simulation.SimulatedBank$Success",
+        "sabo_type": "Type",
+        "pm": "simulation.SimulatedBank$Success",
+        "secdfd": "status",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "banking.AccountInformation",
+        "sabo_type": "Type",
+        "pm": "banking.AccountInformation",
+        "secdfd": "account",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "banking.Money",
+        "sabo_type": "Type",
+        "pm": "banking.Money",
+        "secdfd": "amount",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "int",
+        "secdfd": "amount",
+        "secdfd_type": "asset",
+		"probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "banking.Message",
+        "sabo_type": "Type",
+        "pm": "banking.Message",
+        "secdfd": "message",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "banking.Receipt",
+        "sabo_type": "Type",
+        "pm": "banking.Receipt",
+        "secdfd": "receipt",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "atm.transaction.Transaction#performInvalidPINExtension()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Transaction.performInvalidPINExtension():Status",
+        "secdfd": "Retain_Card",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CardReader#retainCard()",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CardReader.retainCard():void",
+        "secdfd": "Retain_Card",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#retainCard()",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.retainCard():void",
+        "secdfd": "Retain_Card",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CustomerConsole#readMenuChoice(java.lang.String,java.lang.String[])",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CustomerConsole.readMenuChoice(String,String[]):int",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CustomerConsole#readAmount(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CustomerConsole.readAmount(String):Money",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#readInput(int,int)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.readInput(int,int):String",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimDisplay#clearDisplay()",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimDisplay.clearDisplay():void",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimDisplay#display(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimDisplay.display(String):void",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#clearDisplay()",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.clearDisplay():void",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#display(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.display(String):void",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.Session#performSession()",
+        "sabo_type": "Operation",
+        "pm": "atm.Session.performSession():void",
+        "secdfd": "Update_Display_Perform_Session",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CustomerConsole#readPIN(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CustomerConsole.readPIN(String):int",
+        "secdfd": "Read_Card_Verify_PIN",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CardReader#readCard()",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CardReader.readCard():Card",
+        "secdfd": "Read_Card_Verify_PIN",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "banking.Status#isInvalidPIN()",
+        "sabo_type": "Operation",
+        "pm": "banking.Status.isInvalidPIN():boolean",
+        "secdfd": "Read_Card_Verify_PIN",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank$InvalidPIN",
+        "sabo_type": "Type",
+        "pm": "simulation.SimulatedBank.InvalidPIN",
+        "secdfd": "Read_Card_Verify_PIN",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#readCard()",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.readCard():Card",
+        "secdfd": "Read_Card_Verify_PIN",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.CardReader#ejectCard()",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.CardReader.ejectCard():void",
+        "secdfd": "Print_receipt",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.ReceiptPrinter#printReceipt(banking.Receipt)",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.ReceiptPrinter.printReceipt(Receipt):void",
+        "secdfd": "Print_receipt",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#ejectCard()",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.ejectCard():void",
+        "secdfd": "Print_receipt",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#printReceiptLine(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.printReceiptLine(String):void",
+        "secdfd": "Print_receipt",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Transaction#makeTransaction(atm.ATM,atm.Session,banking.Card,int)",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Transaction.makeTransaction(ATM,Session,Card,int):Transaction",
+        "secdfd": "Perform_Transaction",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Transaction#performTransaction()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Transaction.performTransaction():boolean",
+        "secdfd": "Perform_Transaction",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Inquiry",
+        "sabo_type": "Type",
+        "pm": "atm.transaction.Inquiry",
+        "secdfd": "Check_Balance",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Inquiry#completeTransaction()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Inquiry.completeTransaction():Receipt",
+        "secdfd": "Check_Balance",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank#inquiry(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimulatedBank.inquiry(Message,Balances):Status",
+        "secdfd": "Check_Balance",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.sendMessage(Message,Balances):Status",
+        "secdfd": "Check_Balance",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Transfer",
+        "sabo_type": "Type",
+        "pm": "atm.transaction.Transfer",
+        "secdfd": "Transfer",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Transfer#completeTransaction()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Transfer.completeTransaction():Receipt",
+        "secdfd": "Transfer",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank#transfer(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimulatedBank.transfer(Message,Balances):Status",
+        "secdfd": "Transfer",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.sendMessage(Message,Balances):Status",
+        "secdfd": "Transfer",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Deposit",
+        "sabo_type": "Type",
+        "pm": "atm.transaction.Deposit",
+        "secdfd": "Deposit",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Deposit#completeTransaction()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Deposit.completeTransaction():Receipt",
+        "secdfd": "Deposit",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank#initiateDeposit(banking.Message)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimulatedBank.initiateDeposit(Message):Status",
+        "secdfd": "Deposit",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank#completeDeposit(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimulatedBank.completeDeposit(Message,Balances):Status",
+        "secdfd": "Deposit",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.sendMessage(Message,Balances):Status",
+        "secdfd": "Deposit",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Withdrawal",
+        "sabo_type": "Type",
+        "pm": "atm.transaction.Withdrawal",
+        "secdfd": "Withdraw",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.transaction.Withdrawal#completeTransaction()",
+        "sabo_type": "Operation",
+        "pm": "atm.transaction.Withdrawal.completeTransaction():Receipt",
+        "secdfd": "Withdraw",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.SimulatedBank#withdrawal(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.SimulatedBank.withdrawal(Message,Balances):Status",
+        "secdfd": "Withdraw",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.sendMessage(Message,Balances):Status",
+        "secdfd": "Withdraw",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "simulation.Simulation#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "simulation.Simulation.sendMessage(Message,Balances):Status",
+        "secdfd": "Network_Bank",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "atm.physical.NetworkToBank#sendMessage(banking.Message,banking.Balances)",
+        "sabo_type": "Operation",
+        "pm": "atm.physical.NetworkToBank.sendMessage(Message,Balances):Status",
+        "secdfd": "Network_Bank",
+        "secdfd_type": "process"
+    }
+]

@@ -1,0 +1,247 @@
+[
+    {
+        "sabo": "pop3.JPMailMessage",
+        "sabo_type": "Type",
+        "pm": "pop3.JPMailMessage",
+        "secdfd": "EmailBodyAndHeader",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimeMailMessage",
+        "sabo_type": "Type",
+        "pm": "pop3.MimeMailMessage",
+        "secdfd": "MimePartBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimePart",
+        "sabo_type": "Type",
+        "pm": "pop3.MimePart",
+        "secdfd": "MimePartBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimePart7bit",
+        "sabo_type": "Type",
+        "pm": "pop3.MimePart7bit",
+        "secdfd": "MimePartBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimePartBase64",
+        "sabo_type": "Type",
+        "pm": "pop3.MimePartBase64",
+        "secdfd": "MimePartBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "crypto.Ciphertext",
+        "sabo_type": "Type",
+        "pm": "crypto.Ciphertext",
+        "secdfd": "EncBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimeMailMessage",
+        "sabo_type": "Type",
+        "pm": "pop3.MimeMailMessage",
+        "secdfd": "EncBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "smtp.DeclassMsgBodyClosure",
+        "sabo_type": "Type",
+        "pm": "smtp.DeclassMsgBodyClosure",
+        "secdfd": "EncBody",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.JPMailMessage",
+        "sabo_type": "Type",
+        "pm": "pop3.JPMailMessage",
+        "secdfd": "Header",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimeHeader",
+        "sabo_type": "Type",
+        "pm": "pop3.MimeHeader",
+        "secdfd": "Header",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimeMailMessage",
+        "sabo_type": "Type",
+        "pm": "pop3.MimeMailMessage",
+        "secdfd": "Header",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimePart",
+        "sabo_type": "Type",
+        "pm": "pop3.MimePart",
+        "secdfd": "Header",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "pop3.MimePartHeader",
+        "sabo_type": "Type",
+        "pm": "pop3.MimePartHeader",
+        "secdfd": "Header",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "policy.KeyPrincipal",
+        "sabo_type": "Type",
+        "pm": "policy.KeyPrincipal",
+        "secdfd": "BobPublicKey",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.security.PublicKey",
+        "secdfd": "BobPublicKey",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "policy.KeyPrincipal.publicKey",
+		"probable_sabo_type": "Variable",
+		"secdfd": "BobPublicKey",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "policy.KeyPrincipal",
+        "sabo_type": "Type",
+        "pm": "policy.KeyPrincipal",
+        "secdfd": "BobPrivateKey",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.security.PrivateKey",
+        "secdfd": "BobPrivateKey",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.security.Principal",
+        "secdfd": "Principal",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "jif.lang.AbstractPrincipal",
+		"probable_sabo_type": "Type",
+		"secdfd": "Principal",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "policy.PrincipalWrapper.p",
+		"probable_sabo_type": "Variable",
+		"secdfd": "Principal",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "jif.lang.Principal",
+		"probable_sabo_type": "Type",
+		"secdfd": "Principal",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "policy.KeyPrincipal",
+        "sabo_type": "Type",
+        "pm": "policy.KeyPrincipal",
+        "secdfd": "Principal",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "policy.PrincipalWrapper",
+        "sabo_type": "Type",
+        "pm": "policy.PrincipalWrapper",
+        "secdfd": "Principal",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "policy.PolicyStore",
+        "sabo_type": "Type",
+        "pm": "policy.PolicyStore",
+        "secdfd": "PolicyStore",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "pop3.JPMailMessage.toMimeMessage(PrintStream,Principal):MimeMailMessage",
+        "secdfd": "toMimeMessage",
+        "secdfd_type": "process",
+        "probable_sabo_type": "Operation"
+    },
+    {
+        "sabo": "jif.lang.PrincipalUtil#authorize(java.security.Principal,jif.lang.Closure,jif.lang.Closure)",
+        "sabo_type": "Operation",
+        "pm": "jif.lang.PrincipalUtil.authorize(java.security.Principal,Closure,Closure):Closure",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "smtp.MailSenderCrypto#sendMessage(pop3.MimeMailMessage)",
+        "sabo_type": "Operation",
+        "pm": "smtp.MailSenderCrypto.sendMessage(MimeMailMessage):void",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "smtp.MailSenderCrypto#sendText(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "smtp.MailSenderCrypto.sendText(byte[]):void",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "smtp.MailSenderCrypto#sendText(byte[])",
+        "sabo_type": "Operation",
+        "pm": "smtp.MailSenderCrypto.sendText(byte[]):void",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "smtp.MailSenderCrypto#sendText(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "smtp.MailSenderCrypto.sendText(String):void",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "smtp.MailSenderCrypto#sendText(byte[])",
+        "sabo_type": "Operation",
+        "pm": "smtp.MailSenderCrypto.sendText(String):void",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "crypto.AES#decrypt(java.security.Key,crypto.Ciphertext)",
+        "sabo_type": "Operation",
+        "pm": "crypto.AES.decrypt(Key,Ciphertext):String",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "crypto.DES#decrypt(java.security.Key,crypto.Ciphertext)",
+        "sabo_type": "Operation",
+        "pm": "crypto.DES.decrypt(Key,Ciphertext):String",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "pop3.MailReaderCrypto#getJPMailMessage(int)",
+        "sabo_type": "Operation",
+        "pm": "pop3.MailReaderCrypto.getJPMailMessage(int):JPMailMessage",
+        "secdfd": "EncryptBody",
+        "secdfd_type": "process"
+    }
+]

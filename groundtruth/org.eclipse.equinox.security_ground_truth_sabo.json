@@ -1,0 +1,538 @@
+[
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "data",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "secret",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.PasswordExt",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.PasswordExt",
+        "secdfd": "password_external",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.CryptoData",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.CryptoData",
+        "secdfd": "encrypted_data",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences",
+        "secdfd": "node",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot",
+        "secdfd": "node",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper",
+        "secdfd": "node",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences",
+        "secdfd": "node",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "path",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "fieldID",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+	{
+		"probable_sabo": "org.eclipse.equinox.internal.security.storage.friends.ReEncrypter$TmpElement.path",
+		"probable_sabo_type": "Variable",
+		"secdfd": "fieldID",
+		"secdfd_type": "asset"
+	},
+	{
+		"probable_sabo": "org.eclipse.equinox.internal.security.storage.PersistedPath.path",
+		"probable_sabo_type": "Variable",
+		"secdfd": "fieldID",
+		"secdfd_type": "asset"
+	},
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.Map",
+        "secdfd": "Cache",
+        "secdfd_type": "data_store",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.AbstractMap",
+        "secdfd": "Cache",
+        "secdfd_type": "data_store",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.util.HashMap",
+        "secdfd": "Cache",
+        "secdfd_type": "data_store",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "probable_sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.passwordCache",
+        "probable_sabo_type": "Variable",
+        "secdfd": "Cache",
+        "secdfd_type": "data_store"
+    },
+    {
+        "probable_sabo": "org.eclipse.equinox.internal.security.storage.PersistedPath.path",
+        "probable_sabo_type": "Variable",
+        "secdfd": "Cache",
+        "secdfd_type": "data_store"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#node(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.node(String):SecurePreferences",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#node(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.node(String):ISecurePreferences",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#node(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.node(String):ISecurePreferences",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#nodeExists(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.nodeExists(String):boolean",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#nodeExists(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.nodeExists(String):boolean",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#nodeExists(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.nodeExists(String):boolean",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#navigateToNode(java.lang.String,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.navigateToNode(String,boolean):SecurePreferences",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#internalGet(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.internalGet(String):String",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#get(java.lang.String,java.lang.String,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.get(String,String,SecurePreferencesContainer):String",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#getBoolean(java.lang.String,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.getBoolean(String,boolean,SecurePreferencesContainer):boolean",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#getDouble(java.lang.String,double,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.getDouble(String,double,SecurePreferencesContainer):double",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#getFloat(java.lang.String,float,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.getFloat(String,float,SecurePreferencesContainer):float",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#getInt(java.lang.String,int,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.getInt(String,int,SecurePreferencesContainer):int",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#getLong(java.lang.String,long,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.getLong(String,long,SecurePreferencesContainer):long",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#get(java.lang.String,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.get(String,String):String",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#getBoolean(java.lang.String,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.getBoolean(String,boolean):boolean",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#getDouble(java.lang.String,double)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.getDouble(String,double):double",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#getFloat(java.lang.String,float)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.getFloat(String,float):float",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#getInt(java.lang.String,int)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.getInt(String,int):int",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#getLong(java.lang.String,long)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.getLong(String,long):long",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#get(java.lang.String,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.get(String,String):String",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#getBoolean(java.lang.String,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.getBoolean(String,boolean):boolean",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#getDouble(java.lang.String,double)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.getDouble(String,double):double",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#getFloat(java.lang.String,float)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.getFloat(String,float):float",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#getInt(java.lang.String,int)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.getInt(String,int):int",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#getLong(java.lang.String,long)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.getLong(String,long):long",
+        "secdfd": "Get_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot#getPassword(java.lang.String,org.eclipse.equinox.security.storage.provider.IPreferencesContainer,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getPassword(String,IPreferencesContainer,boolean):PasswordExt",
+        "secdfd": "Get_Password_External",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot#getDefaultPassword(org.eclipse.equinox.security.storage.provider.IPreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getDefaultPassword(IPreferencesContainer):PasswordExt",
+        "secdfd": "Get_Password_External",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot#getModulePassword(java.lang.String,org.eclipse.equinox.security.storage.provider.IPreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesRoot.getModulePassword(String,IPreferencesContainer):PasswordExt",
+        "secdfd": "Get_Password_External",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.JavaEncryption#decrypt(org.eclipse.equinox.internal.security.storage.PasswordExt,org.eclipse.equinox.internal.security.storage.CryptoData)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.JavaEncryption.decrypt(PasswordExt,CryptoData):byte[]",
+        "secdfd": "Decrypt_data",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.JavaEncryption#internalDecrypt(org.eclipse.equinox.internal.security.storage.PasswordExt,org.eclipse.equinox.internal.security.storage.CryptoData)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.JavaEncryption.internalDecrypt(PasswordExt,CryptoData):byte[]",
+        "secdfd": "Decrypt_data",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.PasswordExt",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.PasswordExt",
+        "secdfd": "internal_mashed_password",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.CryptoData",
+        "sabo_type": "Type",
+        "pm": "org.eclipse.equinox.internal.security.storage.CryptoData",
+        "secdfd": "encrypted_password",
+        "secdfd_type": "asset"
+    },
+    {
+        "sabo": "NOT_FOUND",
+        "sabo_type": "UNKNOWN",
+        "pm": "java.lang.String",
+        "secdfd": "challenge_and_response",
+        "secdfd_type": "asset",
+        "probable_sabo_type": "Type"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.PasswordManagement#recoveryNode(org.eclipse.equinox.internal.security.storage.SecurePreferences,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.PasswordManagement.recoveryNode(SecurePreferences,String):SecurePreferences",
+        "secdfd": "Find_node",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.JavaEncryption#encrypt(org.eclipse.equinox.internal.security.storage.PasswordExt,byte[])",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.JavaEncryption.encrypt(PasswordExt,byte[]):CryptoData",
+        "secdfd": "Encrypt_data",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.JavaEncryption#internalEncrypt(org.eclipse.equinox.internal.security.storage.PasswordExt,byte[])",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.JavaEncryption.internalEncrypt(PasswordExt,byte[]):CryptoData",
+        "secdfd": "Encrypt_data",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.PasswordManagement#mashPassword(java.lang.String[])",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.PasswordManagement.mashPassword(String[]):String",
+        "secdfd": "Create_mash_password",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#remove(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.remove(String):void",
+        "secdfd": "Remove",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#remove(java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.remove(String):void",
+        "secdfd": "Remove",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#put(java.lang.String,java.lang.String,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.put(String,String,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#internalPut(java.lang.String,java.lang.String)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.internalPut(String,String):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#putBoolean(java.lang.String,boolean,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.putBoolean(String,boolean,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#putInt(java.lang.String,int,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.putInt(String,int,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#putDouble(java.lang.String,double,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.putDouble(String,double,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#putLong(java.lang.String,long,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.putLong(String,long,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferences#putFloat(java.lang.String,float,boolean,org.eclipse.equinox.internal.security.storage.SecurePreferencesContainer)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferences.putFloat(String,float,boolean,SecurePreferencesContainer):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#put(java.lang.String,java.lang.String,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.put(String,String,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#putBoolean(java.lang.String,boolean,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.putBoolean(String,boolean,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#putInt(java.lang.String,int,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.putInt(String,int,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#putFloat(java.lang.String,float,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.putFloat(String,float,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#putLong(java.lang.String,long,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.putLong(String,long,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper#putDouble(java.lang.String,double,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.internal.security.storage.SecurePreferencesWrapper.putDouble(String,double,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#put(java.lang.String,java.lang.String,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.put(String,String,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#putInt(java.lang.String,int,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.putInt(String,int,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#putLong(java.lang.String,long,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.putLong(String,long,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#putBoolean(java.lang.String,boolean,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.putBoolean(String,boolean,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#putFloat(java.lang.String,float,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.putFloat(String,float,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    },
+    {
+        "sabo": "org.eclipse.equinox.security.storage.ISecurePreferences#putDouble(java.lang.String,double,boolean)",
+        "sabo_type": "Operation",
+        "pm": "org.eclipse.equinox.security.storage.ISecurePreferences.putDouble(String,double,boolean):void",
+        "secdfd": "Put_value",
+        "secdfd_type": "process"
+    }
+]
