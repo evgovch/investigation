@@ -1,6 +1,6 @@
 {
   "groundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth\\jpetstoredfd_ground_truth_sabo.json",
-  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SBOMs\\jpetstore.sbom.json",
+  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SABO\\jpetstore.sabo.json",
   "checkedLabels": [
     "Operation",
     "Type",

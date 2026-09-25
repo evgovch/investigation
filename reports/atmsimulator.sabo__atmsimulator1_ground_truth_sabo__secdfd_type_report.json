@@ -1,6 +1,6 @@
 {
   "groundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth\\atmsimulator1_ground_truth_sabo.json",
-  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SBOMs\\atmsimulator.sbom.json",
+  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SABO\\atmsimulator.sabo.json",
   "checkedLabels": [
     "Operation",
     "Type",

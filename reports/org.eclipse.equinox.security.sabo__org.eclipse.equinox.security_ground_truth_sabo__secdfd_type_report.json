@@ -1,6 +1,6 @@
 {
   "groundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth\\org.eclipse.equinox.security_ground_truth_sabo.json",
-  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SBOMs\\org.eclipse.equinox.security.sbom.json",
+  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SABO\\org.eclipse.equinox.security.sabo.json",
   "checkedLabels": [
     "Operation",
     "Type",

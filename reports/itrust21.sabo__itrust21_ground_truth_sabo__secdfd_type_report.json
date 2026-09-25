@@ -1,6 +1,6 @@
 {
   "groundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth\\itrust21_ground_truth_sabo.json",
-  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SBOMs\\itrust21.sbom.json",
+  "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SABO\\itrust21.sabo.json",
   "checkedLabels": [
     "Operation",
     "Type",
