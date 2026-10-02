@@ -9,8 +9,8 @@
         "INVALID_SECDFD_TYPE": 5,
         "SECDFD_TYPE_UNDETERMINED": 1,
         "SECDFD_TYPE_UNDEFINED": 7,
-        "GROUND_TRUTH_NOT_FOUND": 184,
-        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 27,
+        "GROUND_TRUTH_NOT_FOUND": 197,
+        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 14,
         "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 234,
         "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 33,
         "SECDFD_TYPE_DOES_NOT_MATCH": 8,
@@ -27,8 +27,8 @@
         "INVALID_SECDFD_TYPE": 4,
         "SECDFD_TYPE_UNDETERMINED": 2,
         "SECDFD_TYPE_UNDEFINED": 5,
-        "GROUND_TRUTH_NOT_FOUND": 519,
-        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 84,
+        "GROUND_TRUTH_NOT_FOUND": 522,
+        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 81,
         "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 705,
         "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 114,
         "SECDFD_TYPE_DOES_NOT_MATCH": 2,
@@ -45,8 +45,8 @@
         "INVALID_SECDFD_TYPE": 1,
         "SECDFD_TYPE_UNDETERMINED": 0,
         "SECDFD_TYPE_UNDEFINED": 4,
-        "GROUND_TRUTH_NOT_FOUND": 2730,
-        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 434,
+        "GROUND_TRUTH_NOT_FOUND": 2735,
+        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 429,
         "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 3801,
         "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 854,
         "SECDFD_TYPE_DOES_NOT_MATCH": 3,
@@ -81,8 +81,8 @@
         "INVALID_SECDFD_TYPE": 1,
         "SECDFD_TYPE_UNDETERMINED": 1,
         "SECDFD_TYPE_UNDEFINED": 3,
-        "GROUND_TRUTH_NOT_FOUND": 256,
-        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 63,
+        "GROUND_TRUTH_NOT_FOUND": 264,
+        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 55,
         "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 376,
         "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 31,
         "SECDFD_TYPE_DOES_NOT_MATCH": 8,
@@ -99,8 +99,8 @@
         "INVALID_SECDFD_TYPE": 1,
         "SECDFD_TYPE_UNDETERMINED": 0,
         "SECDFD_TYPE_UNDEFINED": 1,
-        "GROUND_TRUTH_NOT_FOUND": 409,
-        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 25,
+        "GROUND_TRUTH_NOT_FOUND": 411,
+        "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 23,
         "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 504,
         "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 22,
         "SECDFD_TYPE_DOES_NOT_MATCH": 46,
@@ -124,8 +124,8 @@
       "INVALID_SECDFD_TYPE": 15,
       "SECDFD_TYPE_UNDETERMINED": 4,
       "SECDFD_TYPE_UNDEFINED": 22,
-      "GROUND_TRUTH_NOT_FOUND": 4300,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 689,
+      "GROUND_TRUTH_NOT_FOUND": 4331,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 658,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 5902,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 1111,
       "SECDFD_TYPE_DOES_NOT_MATCH": 81,
@@ -1159,7 +1159,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -1871,7 +1871,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -2174,7 +2174,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -2187,7 +2187,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -2782,7 +2782,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -3360,7 +3360,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -4057,7 +4057,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -4964,7 +4964,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -5637,7 +5637,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -6005,7 +6005,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -6306,7 +6306,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -6585,7 +6585,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -7046,7 +7046,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "atmsimulator.sabo__atmsimulator1_ground_truth_sabo__secdfd_type_report.json",
@@ -14195,7 +14195,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "cocome-impl.sabo__uc1_ground_truth_sabo__secdfd_type_report.json",
@@ -16749,7 +16749,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "cocome-impl.sabo__uc1_ground_truth_sabo__secdfd_type_report.json",
@@ -24250,7 +24250,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "cocome-impl.sabo__uc1_ground_truth_sabo__secdfd_type_report.json",
@@ -59192,7 +59192,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "itrust21.sabo__itrust21_ground_truth_sabo__secdfd_type_report.json",
@@ -73444,7 +73444,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "itrust21.sabo__itrust21_ground_truth_sabo__secdfd_type_report.json",
@@ -78150,7 +78150,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "itrust21.sabo__itrust21_ground_truth_sabo__secdfd_type_report.json",
@@ -99045,7 +99045,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "itrust21.sabo__itrust21_ground_truth_sabo__secdfd_type_report.json",
@@ -111655,7 +111655,7 @@
       "primarySecdfdType": "data-store",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "itrust21.sabo__itrust21_ground_truth_sabo__secdfd_type_report.json",
@@ -138321,7 +138321,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -141247,7 +141247,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -142731,7 +142731,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -144342,7 +144342,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -144446,7 +144446,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -145882,7 +145882,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -145921,7 +145921,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -146012,7 +146012,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "jpmail.sabo__jpmail_ground_truth_sabo__secdfd_type_report.json",
@@ -148383,7 +148383,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "org.eclipse.equinox.security.sabo__org.eclipse.equinox.security_ground_truth_sabo__secdfd_type_report.json",
@@ -159061,7 +159061,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "sourceReport": "org.eclipse.equinox.security.sabo__org.eclipse.equinox.security_ground_truth_sabo__secdfd_type_report.json",

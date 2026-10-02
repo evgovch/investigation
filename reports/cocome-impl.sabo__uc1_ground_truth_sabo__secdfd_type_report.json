@@ -15,8 +15,8 @@
       "INVALID_SECDFD_TYPE": 4,
       "SECDFD_TYPE_UNDETERMINED": 2,
       "SECDFD_TYPE_UNDEFINED": 5,
-      "GROUND_TRUTH_NOT_FOUND": 519,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 84,
+      "GROUND_TRUTH_NOT_FOUND": 522,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 81,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 705,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 114,
       "SECDFD_TYPE_DOES_NOT_MATCH": 2,
@@ -5275,7 +5275,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "org.cocome.tradingsystem.cashdeskline.cashdesk.scannercontroller.impl.ScannerControllerEventHandlerImpl#sendProductBarcodeScannedEvent(org.cocome.tradingsystem.cashdeskline.events.ProductBarcodeScannedEvent):param[0]:productBarcodeScannedEvent",
@@ -7241,7 +7241,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "org.cocome.tradingsystem.external.impl.BankImpl#BankImpl()",
@@ -13017,7 +13017,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "org.cocome.tradingsystem.inventory.data.enterprise.Product#setPurchasePrice(double):param[0]:purchasePrice",

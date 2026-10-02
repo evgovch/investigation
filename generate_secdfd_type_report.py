@@ -158,7 +158,7 @@ def conclusion_for(
         normalized_primary = normalize_secdfd_type(primary_secdfd_type)
         if normalized_primary == "undetermined":
             primary_conclusion = "SECDFD_TYPE_UNDETERMINED"
-        elif str(primary_secdfd_type).strip().casefold() not in VALID_SECDFD_TYPES:
+        elif normalized_primary not in VALID_SECDFD_TYPES:
             primary_conclusion = "INVALID_SECDFD_TYPE"
         else:
             primary_conclusion = None

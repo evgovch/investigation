@@ -15,8 +15,8 @@
       "INVALID_SECDFD_TYPE": 1,
       "SECDFD_TYPE_UNDETERMINED": 1,
       "SECDFD_TYPE_UNDEFINED": 3,
-      "GROUND_TRUTH_NOT_FOUND": 256,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 63,
+      "GROUND_TRUTH_NOT_FOUND": 264,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 55,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 376,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 31,
       "SECDFD_TYPE_DOES_NOT_MATCH": 8,
@@ -1389,7 +1389,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "pop3.MimeHeader#MimeHeader(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)",
@@ -3643,7 +3643,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "pop3.MimePart.header",
@@ -4785,7 +4785,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "util.NewPassword",
@@ -6027,7 +6027,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "pop3.JPMailMessage#JPMailMessage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.security.Principal,java.lang.String,java.lang.String):param[3]:subject",
@@ -6107,7 +6107,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "pop3.MimePart7bit#getMimePart7bit(java.io.BufferedReader,java.lang.String)",
@@ -7213,7 +7213,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "crypto.AESClosure#AESClosure(java.security.Key,byte[])",
@@ -7243,7 +7243,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "pop3.MimeHeader#MimeHeader(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,pop3.ContentType,java.lang.String):param[7]:mimeVersion",
@@ -7313,7 +7313,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "policy.PrincipalWrapper#toString()",

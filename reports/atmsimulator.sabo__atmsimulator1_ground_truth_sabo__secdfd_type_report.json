@@ -15,8 +15,8 @@
       "INVALID_SECDFD_TYPE": 5,
       "SECDFD_TYPE_UNDETERMINED": 1,
       "SECDFD_TYPE_UNDEFINED": 7,
-      "GROUND_TRUTH_NOT_FOUND": 184,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 27,
+      "GROUND_TRUTH_NOT_FOUND": 197,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 14,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 234,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 33,
       "SECDFD_TYPE_DOES_NOT_MATCH": 8,
@@ -541,7 +541,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "simulation.Simulation#getSimulatedBank()",
@@ -1091,7 +1091,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "banking.Message#getPIN()",
@@ -1325,7 +1325,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.transaction.Transaction.SENDING_TO_BANK_STATE",
@@ -1335,7 +1335,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "simulation.SimReceiptPrinter#println(java.lang.String)",
@@ -1795,7 +1795,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "simulation.SimulatedBank$Failure#isSuccess()",
@@ -2241,7 +2241,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.physical.OperatorPanel.atm",
@@ -2779,7 +2779,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.transaction.Deposit#Deposit(atm.ATM,atm.Session,banking.Card,int):param[1]:session",
@@ -3479,7 +3479,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.Session.pin",
@@ -3999,7 +3999,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "banking.Message#Message(int,banking.Card,int,int,int,int,banking.Money):param[3]:serialNumber",
@@ -4283,7 +4283,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.physical.CustomerConsole",
@@ -4515,7 +4515,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.transaction.Withdrawal#completeTransaction()",
@@ -4731,7 +4731,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "simulation.SimEnvelopeAcceptor#cancelRequested()",
@@ -5087,7 +5087,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "atm.physical.Log#logEnvelopeAccepted()",

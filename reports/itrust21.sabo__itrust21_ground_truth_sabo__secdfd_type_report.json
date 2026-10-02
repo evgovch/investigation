@@ -15,8 +15,8 @@
       "INVALID_SECDFD_TYPE": 1,
       "SECDFD_TYPE_UNDETERMINED": 0,
       "SECDFD_TYPE_UNDEFINED": 4,
-      "GROUND_TRUTH_NOT_FOUND": 2730,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 434,
+      "GROUND_TRUTH_NOT_FOUND": 2735,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 429,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 3801,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 854,
       "SECDFD_TYPE_DOES_NOT_MATCH": 3,
@@ -25308,7 +25308,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "edu.ncsu.csc.itrust.action.ApptAction#getName(long)",
@@ -36272,7 +36272,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "edu.ncsu.csc.itrust.beans.CDCStatsBean#getAge()",
@@ -39892,7 +39892,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "edu.ncsu.csc.itrust.enums.SleepType#SleepType(java.lang.String):param[0]:name",
@@ -55966,7 +55966,7 @@
       "primarySecdfdType": "external entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "edu.ncsu.csc.itrust.action.ViewImmunizationReportAction#ViewImmunizationReportAction(edu.ncsu.csc.itrust.dao.DAOFactory,long,long):param[0]:factory",
@@ -65666,7 +65666,7 @@
       "primarySecdfdType": "data-store",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "edu.ncsu.csc.itrust.action.GroupReportAction#GroupReportAction(edu.ncsu.csc.itrust.dao.DAOFactory):param[0]:factory",

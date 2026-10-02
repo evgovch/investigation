@@ -15,8 +15,8 @@
       "INVALID_SECDFD_TYPE": 1,
       "SECDFD_TYPE_UNDETERMINED": 0,
       "SECDFD_TYPE_UNDEFINED": 1,
-      "GROUND_TRUTH_NOT_FOUND": 409,
-      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 25,
+      "GROUND_TRUTH_NOT_FOUND": 411,
+      "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND": 23,
       "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND": 504,
       "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND": 22,
       "SECDFD_TYPE_DOES_NOT_MATCH": 46,
@@ -1685,7 +1685,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "org.eclipse.equinox.security.storage.ISecurePreferences#getFloat(java.lang.String,float):param[1]:def",
@@ -9921,7 +9921,7 @@
       "primarySecdfdType": "External Entity",
       "groundTruthSecdfdTypes": [],
       "groundTruthEntryCount": 0,
-      "conclusion": "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND"
+      "conclusion": "GROUND_TRUTH_NOT_FOUND"
     },
     {
       "id": "org.eclipse.equinox.security.auth.LoginContextFactory#createContext(java.lang.String,java.net.URL,javax.security.auth.callback.CallbackHandler)",
