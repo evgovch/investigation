@@ -84,8 +84,9 @@ class SecdfdTypeReportTests(unittest.TestCase):
             "DataStore", "Process", "Asset",
         ])
         self.assertEqual([row["conclusion"] for row in rows], [
-            "ALMOST_VALID_SECDFD_TYPE", "SECDFD_TYPE_MATCHES",
-            "SECDFD_TYPE_DOES_NOT_MATCH",
+            "INCONSISTENCY and ALMOST_VALID_SECDFD_TYPE",
+            "INCONSISTENCY and SECDFD_TYPE_MATCHES",
+            "INCONSISTENCY and SECDFD_TYPE_DOES_NOT_MATCH",
         ])
         self.assertEqual([row["secdfdTypeIndex"] for row in rows], [0, 1, 2])
         self.assertEqual(rows[0]["almostValidSecdfdType"], "DataStore")
@@ -108,8 +109,35 @@ class SecdfdTypeReportTests(unittest.TestCase):
         self.assertEqual([row["invalidSecdfdType"] for row in rows], invalid_values)
         for row in rows:
             self.assertEqual(row["conclusions"], [
-                "INVALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND",
+                "INCONSISTENCY", "INVALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND",
             ])
+
+    def test_primary_present_anywhere_in_list_is_consistent(self):
+        rows = checked_node_report(
+            [node("n", ["DataStore", "Process"], "Process")],
+            {}, {"n": ["secdfd:DataStore", "secdfd:Process"]},
+        )
+        self.assertEqual(len(rows), 2)
+        for row in rows:
+            self.assertEqual(row["conclusions"], ["GROUND_TRUTH_NOT_FOUND"])
+
+    def test_primary_membership_uses_exact_values(self):
+        for primary in ("process", "Process ", "data_store"):
+            with self.subTest(primary=primary):
+                rows = checked_node_report(
+                    [node("n", ["Process", "DataStore"], primary)], {}, {},
+                )
+                for row in rows:
+                    self.assertIn("INCONSISTENCY", row["conclusions"])
+
+    def test_inconsistent_undetermined_preserves_both_outcomes(self):
+        rows = checked_node_report(
+            [node("n", ["Undetermined"], "Process")], {},
+            {"n": ["secdfd:Undetermined"]},
+        )
+        self.assertEqual(rows[0]["conclusions"], [
+            "INCONSISTENCY", "SECDFD_TYPE_UNDETERMINED", "GROUND_TRUTH_NOT_FOUND",
+        ])
 
     def test_undetermined_is_checked_separately_from_other_labels(self):
         rows = checked_node_report(
@@ -184,7 +212,7 @@ class SecdfdTypeReportTests(unittest.TestCase):
         self.assertEqual([row["secdfdTypeIndex"] for row in rows], [0, 1])
 
     def test_generate_and_combine_separate_node_and_entry_totals(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parent) as directory:
             root = Path(directory)
             groundtruth = root / "groundtruth.json"
             sabo = root / "sabo.json"

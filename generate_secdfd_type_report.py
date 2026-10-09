@@ -272,18 +272,22 @@ def checked_node_report(
         else:
             type_entries = [(None, None)]
 
+        has_inconsistency = is_defined(primary_secdfd_type) and (
+            not isinstance(secdfd_types, list) or primary_secdfd_type not in secdfd_types
+        )
+
         for type_index, secdfd_type in type_entries:
             if type_index is None:
-                conclusions = [
-                    "INCONSISTENCY" if is_defined(primary_secdfd_type)
-                    else "SECDFD_TYPE_UNDEFINED"
-                ]
+                conclusions = [] if has_inconsistency else ["SECDFD_TYPE_UNDEFINED"]
                 if not groundtruth_entries:
                     conclusions.append("GROUND_TRUTH_NOT_FOUND")
             else:
                 conclusions = conclusion_for(
                     secdfd_type, secdfd_targets, groundtruth_entries
                 )
+
+            if has_inconsistency:
+                conclusions.insert(0, "INCONSISTENCY")
 
             expected_target = (
                 f"secdfd:{secdfd_type}"
