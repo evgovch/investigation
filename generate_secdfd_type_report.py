@@ -9,21 +9,38 @@ from typing import Any
 
 
 CHECKED_LABELS = {"Variable", "Operation", "Type"}
+CHECKED_LABELS_CASEFOLDED = {label.casefold() for label in CHECKED_LABELS}
 VALID_SECDFD_TYPES = {
+    "external_entity",
     "externalentity",
+    "external entity",
     "datastore",
+    "data store",
+    "data_store",
     "asset",
     "process",
     "flow",
+    "undetermined",
+}
+SECDFD_TARGET_TO_GROUNDTRUTH = {
+    "secdfd:Process": "process",
+    "secdfd:Asset": "asset",
+    "secdfd:DataStore": "data_store",
+    "secdfd:Flow": "flow",
+    "secdfd:External Entity": "external_entity",
 }
 CONCLUSIONS = (
     "INVALID_SECDFD_TYPE",
+    "ALMOST_VALID_SECDFD_TYPE",
     "SECDFD_TYPE_UNDETERMINED",
     "SECDFD_TYPE_UNDEFINED",
+    "INCONSISTENCY",
     "GROUND_TRUTH_NOT_FOUND",
     "INVALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND",
+    "ALMOST_VALID_SECDFD_TYPE and GROUND_TRUTH_NOT_FOUND",
     "SECDFD_TYPE_UNDETERMINED and GROUND_TRUTH_NOT_FOUND",
     "SECDFD_TYPE_UNDEFINED and GROUND_TRUTH_NOT_FOUND",
+    "INCONSISTENCY and GROUND_TRUTH_NOT_FOUND",
     "SECDFD_TYPE_DOES_NOT_MATCH",
     "SECDFD_TYPE_MATCHES",
 )
@@ -33,7 +50,7 @@ UNMATCHED_GROUNDTRUTH_CONCLUSION = "GROUND_TRUTH_ENTRIES_NOT_MATCHED"
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Compare SABO node primarySecdfdType values with SecDFD types from "
+            "Compare SABO SecDFD implements edges with SecDFD types from "
             "a ground-truth SABO mapping file."
         )
     )
@@ -106,10 +123,14 @@ def get_sabo_nodes(sabo_json: Any) -> list[dict[str, Any]]:
     return [node for node in nodes if isinstance(node, dict)]
 
 
-def normalize_secdfd_type(value: Any) -> str:
-    """Normalize common style variants: DataStore, data_store, data store."""
-    normalized = str(value).strip().casefold()
-    return re.sub(r"[\s_-]+", "", normalized)
+def get_sabo_edges(sabo_json: dict[str, Any]) -> list[dict[str, Any]]:
+    edges = sabo_json.get("edges")
+    if edges is None:
+        elements = sabo_json.get("elements", {})
+        edges = elements.get("edges", []) if isinstance(elements, dict) else []
+    if not isinstance(edges, list):
+        raise ValueError("SABO edges must be a list.")
+    return [edge for edge in edges if isinstance(edge, dict)]
 
 
 def is_defined(value: Any) -> bool:
@@ -123,6 +144,34 @@ def labels_from_data(data: dict[str, Any]) -> list[str]:
     if labels is None:
         return []
     return [str(labels)]
+
+
+def build_secdfd_target_index(
+    nodes: list[dict[str, Any]], edges: list[dict[str, Any]]
+) -> dict[str, list[str]]:
+    category_ids = set()
+    for node in nodes:
+        data = node.get("data")
+        if not isinstance(data, dict):
+            continue
+        node_id = data.get("id")
+        if (
+            isinstance(node_id, str)
+            and node_id.startswith("secdfd:")
+            and "category" in {label.casefold() for label in labels_from_data(data)}
+        ):
+            category_ids.add(node_id)
+
+    index: dict[str, list[str]] = defaultdict(list)
+    for edge in edges:
+        data = edge.get("data")
+        if not isinstance(data, dict) or data.get("label") != "implements":
+            continue
+        source, target = data.get("source"), data.get("target")
+        if isinstance(source, str) and target in category_ids:
+            if target not in index[source]:
+                index[source].append(target)
+    return dict(index)
 
 
 def build_groundtruth_index(
@@ -150,39 +199,52 @@ def unique_defined_values(values: list[Any]) -> list[Any]:
 
 
 def conclusion_for(
-    primary_secdfd_type: Any, groundtruth_entries: list[dict[str, Any]]
-) -> str:
-    if not is_defined(primary_secdfd_type):
-        primary_conclusion = "SECDFD_TYPE_UNDEFINED"
-    else:
-        normalized_primary = normalize_secdfd_type(primary_secdfd_type)
-        if normalized_primary == "undetermined":
-            primary_conclusion = "SECDFD_TYPE_UNDETERMINED"
-        elif normalized_primary not in VALID_SECDFD_TYPES:
-            primary_conclusion = "INVALID_SECDFD_TYPE"
-        else:
-            primary_conclusion = None
+    secdfd_type: Any,
+    secdfd_targets: list[str],
+    groundtruth_entries: list[dict[str, Any]],
+) -> list[str]:
+    conclusions = []
+    if not isinstance(secdfd_type, str) or secdfd_type.casefold() not in VALID_SECDFD_TYPES:
+        conclusions.append("INVALID_SECDFD_TYPE")
+    elif f"secdfd:{secdfd_type}" not in secdfd_targets:
+        conclusions.append("ALMOST_VALID_SECDFD_TYPE")
+    elif secdfd_type.casefold() == "undetermined":
+        conclusions.append("SECDFD_TYPE_UNDETERMINED")
+    elif groundtruth_entries:
+        target = f"secdfd:{secdfd_type}"
+        matches = any(
+            target in SECDFD_TARGET_TO_GROUNDTRUTH
+            and entry.get("secdfd_type") == SECDFD_TARGET_TO_GROUNDTRUTH[target]
+            for entry in groundtruth_entries
+        )
+        conclusions.append(
+            "SECDFD_TYPE_MATCHES" if matches else "SECDFD_TYPE_DOES_NOT_MATCH"
+        )
 
     if not groundtruth_entries:
-        if primary_conclusion is not None:
-            return f"{primary_conclusion} and GROUND_TRUTH_NOT_FOUND"
-        return "GROUND_TRUTH_NOT_FOUND"
+        conclusions.append("GROUND_TRUTH_NOT_FOUND")
+    return conclusions
 
-    if primary_conclusion is not None:
-        return primary_conclusion
 
-    normalized_groundtruth_types = {
-        normalize_secdfd_type(entry.get("secdfd_type"))
-        for entry in groundtruth_entries
-        if is_defined(entry.get("secdfd_type"))
-    }
-    if normalized_primary in normalized_groundtruth_types:
-        return "SECDFD_TYPE_MATCHES"
-    return "SECDFD_TYPE_DOES_NOT_MATCH"
+def is_checked_node(data: dict[str, Any]) -> bool:
+    return bool(CHECKED_LABELS_CASEFOLDED.intersection(
+        label.casefold() for label in labels_from_data(data)
+    ))
+
+
+def secdfd_property(data: dict[str, Any], name: str) -> Any:
+    if name in data:
+        return data[name]
+    properties = data.get("properties")
+    if isinstance(properties, dict):
+        return properties.get(name)
+    return None
 
 
 def checked_node_report(
-    nodes: list[dict[str, Any]], groundtruth_index: dict[str, list[dict[str, Any]]]
+    nodes: list[dict[str, Any]],
+    groundtruth_index: dict[str, list[dict[str, Any]]],
+    secdfd_target_index: dict[str, list[str]],
 ) -> list[dict[str, Any]]:
     report_rows = []
     for node in nodes:
@@ -191,31 +253,63 @@ def checked_node_report(
             continue
 
         labels = labels_from_data(data)
-        if not CHECKED_LABELS.intersection(labels):
+        if not is_checked_node(data):
             continue
 
         node_id = data.get("id")
-        properties = data.get("properties", {})
-        if not isinstance(properties, dict):
-            properties = {}
-
-        primary_secdfd_type = properties.get("primarySecdfdType")
+        primary_secdfd_type = secdfd_property(data, "primarySecdfdType")
+        secdfd_types = secdfd_property(data, "secdfdTypes")
+        secdfd_targets = secdfd_target_index.get(node_id, [])
         groundtruth_entries = groundtruth_index.get(node_id, [])
-        conclusion = conclusion_for(primary_secdfd_type, groundtruth_entries)
         groundtruth_types = unique_defined_values(
             [entry.get("secdfd_type") for entry in groundtruth_entries]
         )
 
-        report_rows.append(
-            {
+        if secdfd_types and is_defined(secdfd_types):
+            if not isinstance(secdfd_types, list):
+                raise ValueError(f"secdfdTypes must be a list for node {node_id!r}")
+            type_entries = list(enumerate(secdfd_types))
+        else:
+            type_entries = [(None, None)]
+
+        for type_index, secdfd_type in type_entries:
+            if type_index is None:
+                conclusions = [
+                    "INCONSISTENCY" if is_defined(primary_secdfd_type)
+                    else "SECDFD_TYPE_UNDEFINED"
+                ]
+                if not groundtruth_entries:
+                    conclusions.append("GROUND_TRUTH_NOT_FOUND")
+            else:
+                conclusions = conclusion_for(
+                    secdfd_type, secdfd_targets, groundtruth_entries
+                )
+
+            expected_target = (
+                f"secdfd:{secdfd_type}"
+                if type_index is not None and isinstance(secdfd_type, str)
+                else None
+            )
+            row = {
                 "id": node_id,
                 "labels": labels,
                 "primarySecdfdType": primary_secdfd_type,
+                "secdfdTypes": secdfd_types,
+                "secdfdType": secdfd_type,
+                "secdfdTypeIndex": type_index,
+                "implementsSecdfdTargets": secdfd_targets,
+                "expectedSecdfdTarget": expected_target,
+                "hasImplementsEdge": expected_target in secdfd_targets,
                 "groundTruthSecdfdTypes": groundtruth_types,
                 "groundTruthEntryCount": len(groundtruth_entries),
-                "conclusion": conclusion,
+                "conclusion": " and ".join(conclusions),
+                "conclusions": conclusions,
             }
-        )
+            if "INVALID_SECDFD_TYPE" in conclusions:
+                row["invalidSecdfdType"] = secdfd_type
+            if "ALMOST_VALID_SECDFD_TYPE" in conclusions:
+                row["almostValidSecdfdType"] = secdfd_type
+            report_rows.append(row)
     return report_rows
 
 
@@ -247,9 +341,15 @@ def default_output_path(groundtruth_path: Path, sabo_path: Path, reports_dir: Pa
 
 def generate_report(groundtruth_path: Path, sabo_path: Path) -> dict[str, Any]:
     groundtruth_entries = ensure_mapping_entries(load_json(groundtruth_path))
-    sabo_nodes = get_sabo_nodes(load_json(sabo_path))
+    sabo_json = load_json(sabo_path)
+    sabo_nodes = get_sabo_nodes(sabo_json)
+    secdfd_target_index = build_secdfd_target_index(
+        sabo_nodes, get_sabo_edges(sabo_json)
+    )
     groundtruth_index = build_groundtruth_index(groundtruth_entries)
-    checked_nodes = checked_node_report(sabo_nodes, groundtruth_index)
+    checked_nodes = checked_node_report(
+        sabo_nodes, groundtruth_index, secdfd_target_index
+    )
     conclusion_counts = Counter(row["conclusion"] for row in checked_nodes)
     unmatched_groundtruth_entries = find_unmatched_groundtruth_entries(
         groundtruth_entries, sabo_nodes
@@ -265,11 +365,21 @@ def generate_report(groundtruth_path: Path, sabo_path: Path) -> dict[str, Any]:
                 len(entries) for entries in groundtruth_index.values()
             ),
             "totalSaboNodes": len(sabo_nodes),
-            "totalCheckedNodes": len(checked_nodes),
+            "totalCheckedNodes": sum(
+                is_checked_node(data)
+                for node in sabo_nodes
+                if isinstance((data := node.get("data")), dict)
+            ),
+            "totalReportEntries": len(checked_nodes),
             "conclusions": {
                 **{
                     conclusion: conclusion_counts.get(conclusion, 0)
                     for conclusion in CONCLUSIONS
+                },
+                **{
+                    conclusion: count
+                    for conclusion, count in conclusion_counts.items()
+                    if conclusion not in CONCLUSIONS
                 },
                 UNMATCHED_GROUNDTRUTH_CONCLUSION: len(unmatched_groundtruth_entries),
             },
@@ -302,6 +412,7 @@ def main() -> None:
 
     print(f"Wrote report: {output_path}")
     print(f"Checked nodes: {report['summary']['totalCheckedNodes']}")
+    print(f"Report entries: {report['summary']['totalReportEntries']}")
     for conclusion, count in report["summary"]["conclusions"].items():
         print(f"{conclusion}: {count}")
 

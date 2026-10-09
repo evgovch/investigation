@@ -45,6 +45,7 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
     total_groundtruth_entries = 0
     groundtruth_entries_with_sabo = 0
     total_sabo_nodes = 0
+    total_checked_nodes = 0
 
     for path in report_paths:
         report = load_report(path)
@@ -62,6 +63,7 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
             "groundtruthEntriesWithSabo", 0
         )
         total_sabo_nodes += summary.get("totalSaboNodes", 0)
+        total_checked_nodes += summary["totalCheckedNodes"]
 
         source_reports.append(
             {
@@ -69,6 +71,7 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
                 "groundtruth": groundtruth,
                 "sabo": sabo,
                 "totalCheckedNodes": summary.get("totalCheckedNodes", 0),
+                "totalReportEntries": len(report["checkedNodes"]),
                 "conclusions": conclusions,
             }
         )
@@ -92,7 +95,8 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
             "totalGroundtruthEntries": total_groundtruth_entries,
             "groundtruthEntriesWithSabo": groundtruth_entries_with_sabo,
             "totalSaboNodes": total_sabo_nodes,
-            "totalCheckedNodes": len(checked_nodes),
+            "totalCheckedNodes": total_checked_nodes,
+            "totalReportEntries": len(checked_nodes),
             "conclusions": dict(conclusion_counts),
             "unmatchedGroundtruthEntries": unmatched_groundtruth_entries,
         },
@@ -121,6 +125,7 @@ def main() -> None:
     print(f"Wrote combined report: {output_path}")
     print(f"Source reports: {combined_report['summary']['reportCount']}")
     print(f"Checked nodes: {combined_report['summary']['totalCheckedNodes']}")
+    print(f"Report entries: {combined_report['summary']['totalReportEntries']}")
 
 
 if __name__ == "__main__":
