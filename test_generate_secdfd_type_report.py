@@ -1,18 +1,27 @@
 import json
-import tempfile
 import unittest
-from collections import Counter
+from copy import deepcopy
 from pathlib import Path
+from unittest.mock import mock_open, patch
 
-from combine_secdfd_type_reports import combine_reports
+from combine_secdfd_type_reports import combine_reports, load_report
 from generate_secdfd_type_report import (
-    SECDFD_TARGET_TO_GROUNDTRUTH,
+    CONCLUSIONS,
+    DIMENSION_OUTCOMES,
     VALID_SECDFD_TYPES,
+    additional_groundtruth_entries,
+    assignment_outcome,
+    build_groundtruth_index,
     build_secdfd_target_index,
     checked_node_report,
-    conclusion_for,
+    evaluate_outcomes,
     generate_report,
     get_sabo_edges,
+    groundtruth_availability,
+    normalize_secdfd_type,
+    summarize_node_outcomes,
+    summarize_outcomes,
+    validate_evaluation_counts,
 )
 
 
@@ -22,155 +31,189 @@ def node(node_id, types=None, primary=None, label="Operation"):
     }}}
 
 
+def mapping(node_id, label, element="example"):
+    return {"sabo": node_id, "secdfd_type": label, "secdfd": element}
+
+
 class SecdfdTypeReportTests(unittest.TestCase):
-    def test_exact_edge_to_groundtruth_mappings(self):
-        for target, expected in SECDFD_TARGET_TO_GROUNDTRUTH.items():
-            label = target.removeprefix("secdfd:")
-            with self.subTest(target=target):
-                self.assertEqual(
-                    conclusion_for(label, [target], [{"secdfd_type": expected}]),
-                    ["SECDFD_TYPE_MATCHES"],
-                )
-                for incorrect in (expected.upper(), expected + " ", "different"):
-                    self.assertEqual(
-                        conclusion_for(label, [target], [{"secdfd_type": incorrect}]),
-                        ["SECDFD_TYPE_DOES_NOT_MATCH"],
-                    )
-
-    def test_alias_validity_is_case_insensitive_but_edge_target_is_literal(self):
-        for alias in VALID_SECDFD_TYPES:
-            label = alias.upper()
+    def test_normalization_accepts_only_specified_aliases_and_case_variants(self):
+        aliases = {
+            "Asset": "Asset", "ASSET": "Asset", "asset": "Asset",
+            "DataStore": "DataStore", "DATA STORE": "DataStore",
+            "data_store": "DataStore", "Process": "Process", "FLOW": "Flow",
+            "External Entity": "External Entity", "externalentity": "External Entity",
+            "EXTERNAL_ENTITY": "External Entity", "undetermined": "Undetermined",
+        }
+        for label, expected in aliases.items():
             with self.subTest(label=label):
-                self.assertEqual(
-                    conclusion_for(label, [], []),
-                    ["ALMOST_VALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND"],
-                )
-        self.assertEqual(
-            conclusion_for("process", ["secdfd:Process"], []),
-            ["ALMOST_VALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND"],
+                self.assertEqual(normalize_secdfd_type(label), expected)
+        for label in (None, 42, [], {}, "", " ", "Process ", "data-store", "Unknown"):
+            with self.subTest(invalid=label):
+                self.assertIsNone(normalize_secdfd_type(label))
+
+    def test_assignment_undefined_cases(self):
+        for primary in (None, ""):
+            for types in (None, []):
+                with self.subTest(primary=primary, types=types):
+                    self.assertEqual(assignment_outcome(primary, types), "UNDEFINED")
+
+    def test_assignment_consistency_requires_nonempty_string_and_exact_membership(self):
+        cases = (
+            ("Process", ["Asset", "Process"]),
+            ("Unknown", ["Unknown"]),
+            (" ", [" "]),
         )
+        for primary, types in cases:
+            with self.subTest(primary=primary):
+                self.assertEqual(assignment_outcome(primary, types), "DEFINED_AND_CONSISTENT")
 
-    def test_undefined_requires_both_fields_empty(self):
-        inputs = [node("n", [], primary) for primary in (None, "", " ")]
-        inputs.append({"data": {"id": "n", "labels": ["Type"]}})
-        for item in inputs:
-            with self.subTest(node=item):
-                rows = checked_node_report([item], {}, {"n": ["secdfd:Process"]})
-                self.assertEqual(len(rows), 1)
-                self.assertEqual(rows[0]["conclusions"], [
-                    "SECDFD_TYPE_UNDEFINED", "GROUND_TRUTH_NOT_FOUND",
-                ])
-                self.assertIsNone(rows[0]["secdfdTypeIndex"])
+    def test_assignment_inconsistent_cases_include_wrong_field_types(self):
+        cases = (
+            (None, ["Process"]), ("", ["Process"]), ("Process", None),
+            ("Process", []), ("Process", "Process"), ("Process", {}),
+            (42, [42]), (False, [False]), ([], None), (None, {}), (None, ""),
+            (None, 0), (" ", []), ("process", ["Process"]),
+            ("Process", ["Process "]), ("DataStore", ["Data Store"]),
+        )
+        for primary, types in cases:
+            with self.subTest(primary=primary, types=types):
+                self.assertEqual(assignment_outcome(primary, types), "INCONSISTENT")
 
-    def test_inconsistency_for_empty_types_and_any_defined_primary(self):
-        for types in (None, [], ""):
-            for primary in ("get", "Process", "Undetermined"):
-                with self.subTest(types=types, primary=primary):
-                    item = node("n", types, primary)
-                    rows = checked_node_report([item], {}, {"n": ["secdfd:Process"]})
-                    self.assertEqual(rows[0]["conclusions"], [
-                        "INCONSISTENCY", "GROUND_TRUTH_NOT_FOUND",
-                    ])
-                    rows = checked_node_report([item], {"n": [{}]}, {})
-                    self.assertEqual(rows[0]["conclusions"], ["INCONSISTENCY"])
+    def test_canonical_labels_are_valid_without_edges(self):
+        for label in VALID_SECDFD_TYPES:
+            with self.subTest(label=label):
+                rows = checked_node_report([node("n", [label], label)], {}, {}, {})
+                self.assertEqual(rows[0]["outcomes"]["validity"], "VALID")
+                self.assertFalse(rows[0]["hasImplementsEdge"])
 
-    def test_each_type_uses_its_own_edge_and_groundtruth(self):
+    def test_recognized_noncanonical_labels_are_almost_valid(self):
+        for label in ("process", "ASSET", "Data Store", "Data_Store", "ExternalEntity"):
+            with self.subTest(label=label):
+                outcomes = evaluate_outcomes("DEFINED_AND_CONSISTENT", label, set(), set())
+                self.assertEqual(outcomes["validity"], "ALMOST_VALID")
+                self.assertEqual(outcomes["determination"], "DETERMINED")
+                self.assertEqual(outcomes["mappingCorrectness"], "UNASSESSED")
+
+    def test_invalid_values_have_no_determination_or_correctness(self):
+        for label in ("Unknown", "data-store", "Process ", 42, None, {}, []):
+            with self.subTest(label=label):
+                outcomes = evaluate_outcomes("DEFINED_AND_CONSISTENT", label, {"Process"}, set())
+                self.assertEqual(outcomes["validity"], "INVALID")
+                self.assertIsNone(outcomes["determination"])
+                self.assertIsNone(outcomes["mappingCorrectness"])
+
+    def test_undefined_and_inconsistent_gate_all_type_dimensions(self):
+        for assignment in ("UNDEFINED", "INCONSISTENT"):
+            outcomes = evaluate_outcomes(assignment, "Process", {"Process"}, set())
+            for dimension in ("validity", "determination", "mappingCorrectness"):
+                self.assertIsNone(outcomes[dimension])
+            self.assertEqual(outcomes["groundTruthAvailability"], "ORIGINAL_GROUND_TRUTH_AVAILABLE")
+
+    def test_undetermined_including_almost_valid_variant_has_no_correctness(self):
+        for label, validity in (("Undetermined", "VALID"), ("UNDETERMINED", "ALMOST_VALID")):
+            outcomes = evaluate_outcomes("DEFINED_AND_CONSISTENT", label, {"Process"}, set())
+            self.assertEqual(outcomes["validity"], validity)
+            self.assertEqual(outcomes["determination"], "UNDETERMINED")
+            self.assertIsNone(outcomes["mappingCorrectness"])
+
+    def test_groundtruth_availability_original_takes_precedence(self):
+        cases = (
+            ({"Process"}, set(), "ORIGINAL_GROUND_TRUTH_AVAILABLE"),
+            ({"Process"}, {"Asset"}, "ORIGINAL_GROUND_TRUTH_AVAILABLE"),
+            (set(), {"Asset"}, "EXTENDED_GROUND_TRUTH_ONLY"),
+            (set(), set(), "GROUND_TRUTH_UNAVAILABLE"),
+        )
+        for original, extended, expected in cases:
+            self.assertEqual(groundtruth_availability(original, extended), expected)
+
+    def test_correctness_checks_original_extended_union_and_unavailable(self):
+        cases = (
+            ({"Process"}, {"Process"}, "CORRECT"),
+            ({"Process"}, {"Asset"}, "CORRECT"),
+            ({"Asset"}, {"Process"}, "PROBABLY_CORRECT"),
+            (set(), {"Process"}, "PROBABLY_CORRECT"),
+            ({"Asset"}, {"Flow"}, "INCORRECT"),
+            (set(), {"Asset"}, "INCORRECT"),
+            (set(), set(), "UNASSESSED"),
+        )
+        for original, extended, expected in cases:
+            with self.subTest(original=original, extended=extended):
+                outcomes = evaluate_outcomes("DEFINED_AND_CONSISTENT", "process", original, extended)
+                self.assertEqual(outcomes["mappingCorrectness"], expected)
+
+    def test_each_label_is_evaluated_independently_with_raw_values_preserved(self):
+        labels = ["Process", "Data Store", "Unknown", "Undetermined", None]
         rows = checked_node_report(
-            [node("n", ["DataStore", "Process", "Asset"], "Flow")],
-            {"n": [{"secdfd_type": "process"}]},
-            {"n": ["secdfd:Process", "secdfd:Asset"]},
+            [node("n", labels, "Process")],
+            build_groundtruth_index([mapping("n", "process")]), {}, {},
         )
-        self.assertEqual([row["secdfdType"] for row in rows], [
-            "DataStore", "Process", "Asset",
-        ])
-        self.assertEqual([row["conclusion"] for row in rows], [
-            "INCONSISTENCY and ALMOST_VALID_SECDFD_TYPE",
-            "INCONSISTENCY and SECDFD_TYPE_MATCHES",
-            "INCONSISTENCY and SECDFD_TYPE_DOES_NOT_MATCH",
-        ])
-        self.assertEqual([row["secdfdTypeIndex"] for row in rows], [0, 1, 2])
-        self.assertEqual(rows[0]["almostValidSecdfdType"], "DataStore")
-        self.assertFalse(rows[0]["hasImplementsEdge"])
-        self.assertTrue(rows[1]["hasImplementsEdge"])
-
-    def test_populated_types_are_checked_without_primary(self):
-        rows = checked_node_report(
-            [node("n", ["Process", "Asset"])],
-            {"n": [{"secdfd_type": "process"}]},
-            {"n": ["secdfd:Process", "secdfd:Asset"]},
-        )
-        self.assertEqual([row["conclusion"] for row in rows], [
-            "SECDFD_TYPE_MATCHES", "SECDFD_TYPE_DOES_NOT_MATCH",
-        ])
-
-    def test_invalid_type_values_are_preserved(self):
-        invalid_values = ["Unknown", "data-store", "Process ", 42, None]
-        rows = checked_node_report([node("n", invalid_values, "Process")], {}, {})
-        self.assertEqual([row["invalidSecdfdType"] for row in rows], invalid_values)
+        self.assertEqual([row["secdfdType"] for row in rows], labels)
+        self.assertEqual([row["secdfdTypeIndex"] for row in rows], list(range(5)))
+        self.assertEqual(rows[0]["outcomes"]["mappingCorrectness"], "CORRECT")
+        self.assertEqual(rows[1]["outcomes"]["mappingCorrectness"], "INCORRECT")
+        self.assertEqual(rows[1]["almostValidSecdfdType"], "Data Store")
+        self.assertEqual(rows[2]["invalidSecdfdType"], "Unknown")
+        self.assertIsNone(rows[4]["invalidSecdfdType"])
         for row in rows:
+            self.assertEqual(row["conclusion"], " and ".join(row["conclusions"]))
             self.assertEqual(row["conclusions"], [
-                "INCONSISTENCY", "INVALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND",
+                value for value in row["outcomes"].values() if value is not None
             ])
 
-    def test_primary_present_anywhere_in_list_is_consistent(self):
-        rows = checked_node_report(
-            [node("n", ["DataStore", "Process"], "Process")],
-            {}, {"n": ["secdfd:DataStore", "secdfd:Process"]},
-        )
+    def test_inconsistent_node_keeps_per_item_rows_but_does_not_assess_labels(self):
+        rows = checked_node_report([node("n", ["Process", "Unknown"], "Asset")], {}, {}, {})
         self.assertEqual(len(rows), 2)
         for row in rows:
-            self.assertEqual(row["conclusions"], ["GROUND_TRUTH_NOT_FOUND"])
+            self.assertEqual(row["outcomes"]["assignmentAndConsistency"], "INCONSISTENT")
+            self.assertIsNone(row["outcomes"]["validity"])
+            self.assertNotIn("invalidSecdfdType", row)
 
-    def test_primary_membership_uses_exact_values(self):
-        for primary in ("process", "Process ", "data_store"):
-            with self.subTest(primary=primary):
-                rows = checked_node_report(
-                    [node("n", ["Process", "DataStore"], primary)], {}, {},
-                )
-                for row in rows:
-                    self.assertIn("INCONSISTENCY", row["conclusions"])
+    def test_missing_primary_with_populated_list_is_inconsistent(self):
+        rows = checked_node_report([node("n", ["Process"])], {}, {}, {})
+        self.assertEqual(rows[0]["outcomes"]["assignmentAndConsistency"], "INCONSISTENT")
+        self.assertIsNone(rows[0]["outcomes"]["mappingCorrectness"])
 
-    def test_inconsistent_undetermined_preserves_both_outcomes(self):
+    def test_nonlist_field_values_produce_one_diagnostic_entry(self):
+        for types in ("Process", 1, False, {"type": "Process"}):
+            rows = checked_node_report([node("n", types, "Process")], {}, {}, {})
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["secdfdTypes"], types)
+            self.assertEqual(rows[0]["outcomes"]["assignmentAndConsistency"], "INCONSISTENT")
+
+    def test_duplicate_labels_still_produce_distinct_entry_indices(self):
+        rows = checked_node_report([node("n", ["Process", "Process"], "Process")], {}, {}, {})
+        self.assertEqual([row["secdfdTypeIndex"] for row in rows], [0, 1])
+
+    def test_groundtruth_normalization_and_addition_deduplication(self):
+        original = [mapping("n", "data_store")]
+        copied = {**mapping("n", "DataStore"), "note": "copied"}
+        added = mapping("n", "asset", "second")
+        additions = additional_groundtruth_entries(original, [copied, added, added])
+        self.assertEqual(additions, [added])
         rows = checked_node_report(
-            [node("n", ["Undetermined"], "Process")], {},
-            {"n": ["secdfd:Undetermined"]},
+            [node("n", ["DataStore", "Asset"], "DataStore")],
+            build_groundtruth_index(original), build_groundtruth_index(additions), {},
         )
-        self.assertEqual(rows[0]["conclusions"], [
-            "INCONSISTENCY", "SECDFD_TYPE_UNDETERMINED", "GROUND_TRUTH_NOT_FOUND",
-        ])
+        self.assertEqual(rows[0]["outcomes"]["mappingCorrectness"], "CORRECT")
+        self.assertEqual(rows[1]["outcomes"]["mappingCorrectness"], "PROBABLY_CORRECT")
+        self.assertEqual(rows[1]["outcomes"]["groundTruthAvailability"], "ORIGINAL_GROUND_TRUTH_AVAILABLE")
 
-    def test_undetermined_is_checked_separately_from_other_labels(self):
-        rows = checked_node_report(
-            [node("n", ["Undetermined", "Process"])],
-            {"n": [{"secdfd_type": "process"}]},
-            {"n": ["secdfd:Undetermined", "secdfd:Process"]},
-        )
-        self.assertEqual([row["conclusion"] for row in rows], [
-            "SECDFD_TYPE_UNDETERMINED", "SECDFD_TYPE_MATCHES",
-        ])
-        self.assertEqual(
-            conclusion_for("Undetermined", ["secdfd:Undetermined"], []),
-            ["SECDFD_TYPE_UNDETERMINED", "GROUND_TRUTH_NOT_FOUND"],
-        )
-        self.assertEqual(
-            conclusion_for("Undetermined", [], []),
-            ["ALMOST_VALID_SECDFD_TYPE", "GROUND_TRUTH_NOT_FOUND"],
-        )
+    def test_malformed_groundtruth_type_is_reported_as_input_error(self):
+        with self.assertRaisesRegex(ValueError, "Unrecognized ground-truth"):
+            build_groundtruth_index([mapping("n", "Unknown")])
 
-    def test_determined_edge_without_groundtruth(self):
-        self.assertEqual(
-            conclusion_for("Process", ["secdfd:Process"], []),
-            ["GROUND_TRUTH_NOT_FOUND"],
-        )
+    def test_node_filter_and_direct_data_properties(self):
+        nodes = [
+            {"data": {"id": "n", "labels": ["operation"],
+                      "secdfdTypes": ["Process"], "primarySecdfdType": "Process"}},
+            node("t", label="type"), node("v", label="Variable"),
+            node("ignore", ["Process"], "Process", label="Category"),
+        ]
+        rows = checked_node_report(nodes, {}, {}, {})
+        self.assertEqual([row["id"] for row in rows], ["n", "t", "v"])
+        self.assertEqual(rows[0]["outcomes"]["validity"], "VALID")
 
-    def test_any_matching_groundtruth_entry_for_current_label(self):
-        self.assertEqual(
-            conclusion_for("Process", ["secdfd:Process"],
-                           [{"secdfd_type": "flow"}, {"secdfd_type": "process"}]),
-            ["SECDFD_TYPE_MATCHES"],
-        )
-
-    def test_edge_index_requires_outgoing_edge_to_existing_category(self):
+    def test_edge_metadata_requires_outgoing_edge_to_existing_category(self):
         nodes = [
             {"data": {"id": "secdfd:Process", "labels": ["Category"]}},
             {"data": {"id": "secdfd:Asset", "labels": ["Type"]}},
@@ -179,12 +222,9 @@ class SecdfdTypeReportTests(unittest.TestCase):
         edges = [
             {"data": {"source": "n", "target": target, "label": label}}
             for target, label in (
-                ("secdfd:Process", "implements"),
-                ("secdfd:Process", "implements"),
-                ("secdfd:Asset", "implements"),
-                ("layer:Logic", "implements"),
-                ("secdfd:Flow", "implements"),
-                ("secdfd:Process", "uses"),
+                ("secdfd:Process", "implements"), ("secdfd:Process", "implements"),
+                ("secdfd:Asset", "implements"), ("layer:Logic", "implements"),
+                ("secdfd:Flow", "implements"), ("secdfd:Process", "uses"),
             )
         ]
         edges.append({"data": {
@@ -193,62 +233,115 @@ class SecdfdTypeReportTests(unittest.TestCase):
         self.assertEqual(build_secdfd_target_index(nodes, edges), {"n": ["secdfd:Process"]})
         self.assertEqual(get_sabo_edges({"elements": {"edges": edges}}), edges)
         self.assertEqual(get_sabo_edges({"edges": edges}), edges)
-        self.assertEqual(get_sabo_edges({"elements": {}}), [])
+        self.assertEqual(get_sabo_edges({}), [])
 
-    def test_node_filter_and_direct_data_fields(self):
-        nodes = [
-            {"data": {"id": "n", "labels": ["operation"],
-                      "secdfdTypes": ["Process"], "primarySecdfdType": None}},
-            node("t", [], label="type"),
-            node("v", [], label="Variable"),
-            node("ignore", ["Process"], label="Category"),
-        ]
-        rows = checked_node_report(nodes, {}, {})
-        self.assertEqual([row["id"] for row in rows], ["n", "t", "v"])
-        self.assertEqual(rows[0]["almostValidSecdfdType"], "Process")
+    def test_summary_denominators_distinguish_nodes_entries_and_not_evaluated(self):
+        rows = checked_node_report([
+            node("multi", ["Process", "Undetermined", "Unknown"], "Process"),
+            node("undefined"),
+        ], {}, {}, {})
+        summary = summarize_outcomes(rows)
+        for dimension in DIMENSION_OUTCOMES:
+            self.assertEqual(sum(summary[dimension].values()), 4)
+        self.assertEqual(summary["mappingCorrectness"]["NOT_EVALUATED"], 3)
+        node_summary = summarize_node_outcomes(rows)
+        self.assertEqual(sum(node_summary["assignmentAndConsistency"].values()), 2)
 
-    def test_duplicate_type_items_keep_separate_indices(self):
-        rows = checked_node_report([node("n", ["Process", "Process"])], {}, {})
-        self.assertEqual([row["secdfdTypeIndex"] for row in rows], [0, 1])
-
-    def test_generate_and_combine_separate_node_and_entry_totals(self):
-        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parent) as directory:
-            root = Path(directory)
-            groundtruth = root / "groundtruth.json"
-            sabo = root / "sabo.json"
-            groundtruth.write_text(json.dumps([
-                {"sabo": "n", "secdfd_type": "process"},
-                {"sabo": "NOT_FOUND", "secdfd_type": "asset"},
-            ]), encoding="utf-8")
-            sabo.write_text(json.dumps({"elements": {
+    def make_report(self):
+        original_path = Path("original.json")
+        extended_path = Path("extended.json")
+        sabo_path = Path("project.sabo.json")
+        original = [mapping("n", "process"), mapping("NOT_FOUND", "asset")]
+        extended = original + [mapping("n", "asset"), mapping("e", "asset")]
+        documents = {
+            original_path: original, extended_path: {"mappings": extended},
+            sabo_path: {"elements": {
                 "nodes": [
-                    node("n", ["Process", "Asset", "Undetermined"]),
-                    node("empty"),
-                    {"data": {"id": "secdfd:Process", "labels": ["Category"]}},
-                ],
-                "edges": [{"data": {
-                    "source": "n", "target": "secdfd:Process", "label": "implements",
-                }}],
-            }}), encoding="utf-8")
-            report = generate_report(groundtruth, sabo)
-            self.assertEqual(report["summary"]["totalCheckedNodes"], 2)
-            self.assertEqual(report["summary"]["totalReportEntries"], 4)
-            self.assertEqual(len(report["summary"]["unmatchedGroundtruthEntries"]), 1)
-            counts = Counter(row["conclusion"] for row in report["checkedNodes"])
-            for conclusion, count in counts.items():
-                self.assertEqual(report["summary"]["conclusions"][conclusion], count)
+                    node("n", ["Process", "Data Store", "Asset", "Undetermined"], "Process"),
+                    node("e", ["Asset"], "Asset"), node("empty"),
+                    node("u", ["Flow"], "Flow"),
+                ], "edges": [],
+            }},
+        }
+        with patch("generate_secdfd_type_report.load_json", side_effect=documents.__getitem__):
+            return generate_report(original_path, sabo_path, extended_path)
 
-            report_paths = [root / "first.json", root / "second.json"]
-            for path in report_paths:
-                path.write_text(json.dumps(report), encoding="utf-8")
-            combined = combine_reports(report_paths)
-            self.assertEqual(combined["summary"]["totalCheckedNodes"], 4)
-            self.assertEqual(combined["summary"]["totalReportEntries"], 8)
-            self.assertEqual(len(combined["checkedNodes"]), 8)
-            self.assertEqual(combined["summary"]["conclusions"]["SECDFD_TYPE_MATCHES"], 2)
-            for source in combined["sourceReports"]:
-                self.assertEqual(source["totalCheckedNodes"], 2)
-                self.assertEqual(source["totalReportEntries"], 4)
+    def test_full_report_uses_both_groundtruth_sources_and_retains_unmatched(self):
+        report = self.make_report()
+        summary = report["summary"]
+        self.assertEqual(summary["totalCheckedNodes"], 4)
+        self.assertEqual(summary["totalReportEntries"], 7)
+        self.assertEqual(summary["totalOriginalGroundtruthEntries"], 2)
+        self.assertEqual(summary["totalExtendedGroundtruthInputEntries"], 4)
+        self.assertEqual(summary["totalExtendedGroundtruthEntries"], 2)
+        self.assertEqual(summary["totalGroundtruthEntries"], 4)
+        self.assertEqual(summary["unmatchedOriginalGroundtruthEntryCount"], 1)
+        self.assertEqual(summary["unmatchedGroundtruthEntries"][0]["groundtruthSource"], "original")
+        expected = {"CORRECT": 1, "PROBABLY_CORRECT": 2, "INCORRECT": 1, "UNASSESSED": 1}
+        for label, count in expected.items():
+            self.assertEqual(summary["conclusions"][label], count)
+        self.assertEqual(sum(summary["conclusionCombinations"].values()), 7)
+        self.assertEqual(set(summary["conclusions"]), set(CONCLUSIONS))
+
+    def test_combined_report_reconciles_dimensions_and_counts_shared_ids_per_project(self):
+        report = self.make_report()
+        paths = [Path("first.json"), Path("second.json")]
+        with patch("combine_secdfd_type_reports.load_report", return_value=report):
+            combined = combine_reports(paths)
+        summary = combined["summary"]
+        self.assertEqual(summary["totalCheckedNodes"], 8)
+        self.assertEqual(summary["totalReportEntries"], 14)
+        self.assertEqual(summary["conclusions"]["PROBABLY_CORRECT"], 4)
+        for dimension in DIMENSION_OUTCOMES:
+            self.assertEqual(sum(summary["outcomes"][dimension].values()), 14)
+        for dimension in summary["nodeOutcomes"]:
+            self.assertEqual(sum(summary["nodeOutcomes"][dimension].values()), 8)
+        self.assertEqual(summary["unmatchedGroundtruthEntryCount"], 2)
+        self.assertEqual(summary["unmatchedGroundtruthEntries"][0]["sabo"], "NOT_FOUND")
+        self.assertIn("sourceSabo", summary["unmatchedGroundtruthEntries"][0])
+
+    def test_combiner_rejects_reports_from_previous_evaluation(self):
+        old_report = {"summary": {}, "checkedNodes": []}
+        with patch.object(Path, "open", mock_open(read_data=json.dumps(old_report))):
+            with self.assertRaisesRegex(ValueError, "Regenerate report"):
+                load_report(Path("old.json"))
+
+    def test_count_checks_accept_empty_reports(self):
+        validate_evaluation_counts([], summarize_outcomes([]))
+
+    def test_count_checks_exclude_inconsistent_node_labels(self):
+        rows = checked_node_report([
+            node("inconsistent", ["Process", "Asset"], "Flow"),
+            node("consistent", ["Process", "Undetermined", "Unknown"], "Process"),
+        ], {}, {}, {})
+        validate_evaluation_counts(rows, summarize_outcomes(rows))
+
+    def test_count_checks_reject_wrong_validity_total(self):
+        report = self.make_report()
+        outcomes = deepcopy(report["summary"]["outcomes"])
+        outcomes["validity"]["VALID"] += 1
+        with self.assertRaisesRegex(ValueError, "Labels = Valid"):
+            validate_evaluation_counts(report["checkedNodes"], outcomes)
+
+    def test_count_checks_reject_wrong_determination_total(self):
+        report = self.make_report()
+        outcomes = deepcopy(report["summary"]["outcomes"])
+        outcomes["determination"]["DETERMINED"] += 1
+        with self.assertRaisesRegex(ValueError, "Determined \\+ Undetermined"):
+            validate_evaluation_counts(report["checkedNodes"], outcomes)
+
+    def test_count_checks_detect_missing_entry_from_multilabel_node(self):
+        report = self.make_report()
+        rows = report["checkedNodes"][1:]
+        with self.assertRaisesRegex(ValueError, "Labels = Valid"):
+            validate_evaluation_counts(rows, summarize_outcomes(rows))
+
+    def test_combiner_rejects_source_report_with_wrong_counts(self):
+        report = self.make_report()
+        report["summary"]["outcomes"]["validity"]["ALMOST_VALID"] += 1
+        with patch.object(Path, "open", mock_open(read_data=json.dumps(report))):
+            with self.assertRaisesRegex(ValueError, "Invalid evaluation counts in corrupt.json"):
+                load_report(Path("corrupt.json"))
 
 
 if __name__ == "__main__":

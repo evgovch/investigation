@@ -6,6 +6,22 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from generate_secdfd_type_report import (
+    EVALUATION_VERSION,
+    summarize_conclusions,
+    summarize_node_outcomes,
+    summarize_outcomes,
+    validate_evaluation_counts,
+)
+
+
+TOTAL_FIELDS = (
+    "totalGroundtruthEntries", "totalOriginalGroundtruthEntries",
+    "totalExtendedGroundtruthEntries", "totalExtendedGroundtruthInputEntries",
+    "groundtruthEntriesWithSabo", "totalSaboNodes", "totalCheckedNodes",
+    "totalReportEntries", "unmatchedGroundtruthEntryCount",
+    "unmatchedOriginalGroundtruthEntryCount", "unmatchedExtendedGroundtruthEntryCount",
+)
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -33,6 +49,12 @@ def load_report(path: Path) -> dict[str, Any]:
         raise ValueError(f"Invalid report structure: {path}")
     if not isinstance(report.get("checkedNodes"), list):
         raise ValueError(f"Report has no checkedNodes list: {path}")
+    if report.get("evaluationVersion") != EVALUATION_VERSION:
+        raise ValueError(f"Regenerate report with current evaluation criteria: {path}")
+    try:
+        validate_evaluation_counts(report["checkedNodes"], report["summary"]["outcomes"])
+    except ValueError as error:
+        raise ValueError(f"Invalid evaluation counts in {path}: {error}") from error
     return report
 
 
@@ -41,63 +63,58 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
     checked_labels = set()
     checked_nodes = []
     unmatched_groundtruth_entries = []
-    conclusion_counts: Counter[str] = Counter()
-    total_groundtruth_entries = 0
-    groundtruth_entries_with_sabo = 0
-    total_sabo_nodes = 0
-    total_checked_nodes = 0
+    totals: Counter[str] = Counter()
 
     for path in report_paths:
         report = load_report(path)
         summary = report["summary"]
         groundtruth = report.get("groundtruth")
         sabo = report.get("sabo")
-        conclusions = summary.get("conclusions", {})
-        if not isinstance(conclusions, dict):
-            raise ValueError(f"Report has invalid conclusion counts: {path}")
-
         checked_labels.update(report.get("checkedLabels", []))
-        conclusion_counts.update(conclusions)
-        total_groundtruth_entries += summary.get("totalGroundtruthEntries", 0)
-        groundtruth_entries_with_sabo += summary.get(
-            "groundtruthEntriesWithSabo", 0
-        )
-        total_sabo_nodes += summary.get("totalSaboNodes", 0)
-        total_checked_nodes += summary["totalCheckedNodes"]
+        totals.update({field: summary[field] for field in TOTAL_FIELDS})
 
         source_reports.append(
             {
                 "report": str(path),
                 "groundtruth": groundtruth,
+                "extendedGroundtruth": report.get("extendedGroundtruth"),
                 "sabo": sabo,
-                "totalCheckedNodes": summary.get("totalCheckedNodes", 0),
-                "totalReportEntries": len(report["checkedNodes"]),
-                "conclusions": conclusions,
+                "summary": summary,
             }
         )
 
         source_metadata = {
             "sourceReport": path.name,
             "groundtruth": groundtruth,
+            "extendedGroundtruth": report.get("extendedGroundtruth"),
             "sabo": sabo,
         }
         for node in report["checkedNodes"]:
             checked_nodes.append({**source_metadata, **node})
 
         for entry in summary.get("unmatchedGroundtruthEntries", []):
-            unmatched_groundtruth_entries.append({**source_metadata, **entry})
+            unmatched_groundtruth_entries.append({
+                "sourceReport": path.name,
+                "sourceGroundtruth": groundtruth,
+                "sourceExtendedGroundtruth": report.get("extendedGroundtruth"),
+                "sourceSabo": sabo,
+                **entry,
+            })
 
+    outcomes = summarize_outcomes(checked_nodes)
+    validate_evaluation_counts(checked_nodes, outcomes)
     return {
+        "evaluationVersion": EVALUATION_VERSION,
         "sourceReports": source_reports,
         "checkedLabels": sorted(checked_labels),
         "summary": {
             "reportCount": len(report_paths),
-            "totalGroundtruthEntries": total_groundtruth_entries,
-            "groundtruthEntriesWithSabo": groundtruth_entries_with_sabo,
-            "totalSaboNodes": total_sabo_nodes,
-            "totalCheckedNodes": total_checked_nodes,
+            **dict(totals),
             "totalReportEntries": len(checked_nodes),
-            "conclusions": dict(conclusion_counts),
+            "outcomes": outcomes,
+            "nodeOutcomes": summarize_node_outcomes(checked_nodes),
+            "conclusions": summarize_conclusions(checked_nodes),
+            "conclusionCombinations": dict(Counter(row["conclusion"] for row in checked_nodes)),
             "unmatchedGroundtruthEntries": unmatched_groundtruth_entries,
         },
         "checkedNodes": checked_nodes,
