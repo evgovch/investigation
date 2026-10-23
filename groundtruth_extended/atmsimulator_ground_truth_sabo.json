@@ -435,10 +435,21 @@
         "secdfd_type": "asset"
     },
     {
-        "note": "Maybe",
         "secdfd": "Bank",
         "secdfd_type": "external_entity",
         "sabo": "simulation.SimulatedBank",
         "sabo_type": "Type"
+    },
+    {
+        "sabo": "atm.physical.NetworkToBank#NetworkToBank(atm.physical.Log,java.net.InetAddress):param[1]:bankAddress",
+        "sabo_type": "Variable",
+        "secdfd": "Bank",
+        "secdfd_type": "external_entity"
+    },
+    {
+        "sabo": "atm.transaction.Withdrawal.amount",
+        "sabo_type": "Variable",
+        "secdfd": "amount",
+        "secdfd_type": "asset"
     }
 ]
