@@ -80,6 +80,14 @@
       "INCORRECT": 2,
       "UNASSESSED": 532
     },
+    "invalidSecdfdTypes": [
+      "data",
+      "Data",
+      "data-provider",
+      "controller",
+      "entity",
+      "factory"
+    ],
     "conclusionCombinations": {
       "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 706,
       "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 518,

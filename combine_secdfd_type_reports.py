@@ -9,6 +9,7 @@ from typing import Any
 from generate_secdfd_type_report import (
     EVALUATION_VERSION,
     summarize_conclusions,
+    summarize_invalid_secdfd_types,
     summarize_node_outcomes,
     summarize_outcomes,
     validate_evaluation_counts,
@@ -114,6 +115,7 @@ def combine_reports(report_paths: list[Path]) -> dict[str, Any]:
             "outcomes": outcomes,
             "nodeOutcomes": summarize_node_outcomes(checked_nodes),
             "conclusions": summarize_conclusions(checked_nodes),
+            "invalidSecdfdTypes": summarize_invalid_secdfd_types(checked_nodes),
             "conclusionCombinations": dict(Counter(row["conclusion"] for row in checked_nodes)),
             "unmatchedGroundtruthEntries": unmatched_groundtruth_entries,
         },

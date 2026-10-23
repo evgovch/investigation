@@ -20,6 +20,7 @@ from generate_secdfd_type_report import (
     groundtruth_availability,
     normalize_secdfd_type,
     summarize_node_outcomes,
+    summarize_invalid_secdfd_types,
     summarize_outcomes,
     validate_evaluation_counts,
 )
@@ -247,7 +248,7 @@ class SecdfdTypeReportTests(unittest.TestCase):
         node_summary = summarize_node_outcomes(rows)
         self.assertEqual(sum(node_summary["assignmentAndConsistency"].values()), 2)
 
-    def make_report(self):
+    def make_report(self, extra_labels=None):
         original_path = Path("original.json")
         extended_path = Path("extended.json")
         sabo_path = Path("project.sabo.json")
@@ -257,7 +258,8 @@ class SecdfdTypeReportTests(unittest.TestCase):
             original_path: original, extended_path: {"mappings": extended},
             sabo_path: {"elements": {
                 "nodes": [
-                    node("n", ["Process", "Data Store", "Asset", "Undetermined"], "Process"),
+                    node("n", ["Process", "Data Store", "Asset", "Undetermined"]
+                         + (extra_labels or []), "Process"),
                     node("e", ["Asset"], "Asset"), node("empty"),
                     node("u", ["Flow"], "Flow"),
                 ], "edges": [],
@@ -342,6 +344,42 @@ class SecdfdTypeReportTests(unittest.TestCase):
         with patch.object(Path, "open", mock_open(read_data=json.dumps(report))):
             with self.assertRaisesRegex(ValueError, "Invalid evaluation counts in corrupt.json"):
                 load_report(Path("corrupt.json"))
+
+    def test_invalid_type_summary_deduplicates_exact_json_values(self):
+        values = [
+            "Unknown", "Unknown", "UNKNOWN", None, None, True, 1,
+            {"a": 1, "b": 2}, {"b": 2, "a": 1}, ["bad"], ["bad"],
+        ]
+        rows = [{"invalidSecdfdType": value} for value in values] + [{}]
+        self.assertEqual(summarize_invalid_secdfd_types(rows), [
+            "Unknown", "UNKNOWN", None, True, 1, {"a": 1, "b": 2}, ["bad"],
+        ])
+
+    def test_invalid_type_summary_excludes_nonevaluated_labels(self):
+        rows = checked_node_report([
+            node("inconsistent", ["Bad"], "Different"),
+            node("consistent", ["Process", "Unknown", "Unknown"], "Process"),
+            node("undefined"),
+        ], {}, {}, {})
+        self.assertEqual(summarize_invalid_secdfd_types(rows), ["Unknown"])
+        self.assertEqual(summarize_invalid_secdfd_types([]), [])
+
+    def test_report_summary_includes_distinct_invalid_types(self):
+        report = self.make_report(["Unknown", "Command", "Unknown"])
+        self.assertEqual(report["summary"]["invalidSecdfdTypes"], ["Unknown", "Command"])
+        self.assertEqual(self.make_report()["summary"]["invalidSecdfdTypes"], [])
+
+    def test_combined_summary_merges_invalid_types_across_projects(self):
+        reports = [self.make_report(["Unknown", "Command"]),
+                   self.make_report(["Command", "UNKNOWN"])]
+        with patch("combine_secdfd_type_reports.load_report", side_effect=reports):
+            combined = combine_reports([Path("first.json"), Path("second.json")])
+        self.assertEqual(combined["summary"]["invalidSecdfdTypes"], [
+            "Unknown", "Command", "UNKNOWN",
+        ])
+        self.assertEqual(combined["sourceReports"][0]["summary"]["invalidSecdfdTypes"], [
+            "Unknown", "Command",
+        ])
 
 
 if __name__ == "__main__":

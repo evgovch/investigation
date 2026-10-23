@@ -333,6 +333,21 @@ def summarize_conclusions(rows: list[dict[str, Any]]) -> dict[str, int]:
     return {label: counts[label] for label in CONCLUSIONS}
 
 
+def summarize_invalid_secdfd_types(rows: list[dict[str, Any]]) -> list[Any]:
+    """Return distinct observed invalid values in first-occurrence order."""
+    values = []
+    seen = set()
+    for row in rows:
+        if "invalidSecdfdType" not in row:
+            continue
+        value = row["invalidSecdfdType"]
+        key = json.dumps(value, sort_keys=True)
+        if key not in seen:
+            seen.add(key)
+            values.append(value)
+    return values
+
+
 def find_unmatched_groundtruth_entries(
     entries: list[dict[str, Any]], nodes: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
@@ -399,6 +414,7 @@ def generate_report(
             "outcomes": outcomes,
             "nodeOutcomes": summarize_node_outcomes(rows),
             "conclusions": summarize_conclusions(rows),
+            "invalidSecdfdTypes": summarize_invalid_secdfd_types(rows),
             "conclusionCombinations": dict(Counter(row["conclusion"] for row in rows)),
             "unmatchedGroundtruthEntryCount": len(unmatched),
             "unmatchedOriginalGroundtruthEntryCount": len(unmatched_original),

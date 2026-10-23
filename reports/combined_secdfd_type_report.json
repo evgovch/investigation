@@ -7,11 +7,11 @@
       "extendedGroundtruth": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\groundtruth_extended\\atmsimulator_ground_truth_sabo.json",
       "sabo": "C:\\Users\\evgeniy.ovchinnikova\\master_thesis\\investigation\\enriched_SABO\\atmsimulator.sabo.json",
       "summary": {
-        "totalGroundtruthEntries": 56,
+        "totalGroundtruthEntries": 67,
         "totalOriginalGroundtruthEntries": 44,
-        "totalExtendedGroundtruthEntries": 12,
-        "totalExtendedGroundtruthInputEntries": 56,
-        "groundtruthEntriesWithSabo": 56,
+        "totalExtendedGroundtruthEntries": 23,
+        "totalExtendedGroundtruthInputEntries": 67,
+        "groundtruthEntriesWithSabo": 67,
         "totalSaboNodes": 734,
         "totalCheckedNodes": 523,
         "totalReportEntries": 532,
@@ -35,15 +35,15 @@
           },
           "groundTruthAvailability": {
             "ORIGINAL_GROUND_TRUTH_AVAILABLE": 37,
-            "EXTENDED_GROUND_TRUTH_ONLY": 12,
-            "GROUND_TRUTH_UNAVAILABLE": 483,
+            "EXTENDED_GROUND_TRUTH_ONLY": 23,
+            "GROUND_TRUTH_UNAVAILABLE": 472,
             "NOT_EVALUATED": 0
           },
           "mappingCorrectness": {
             "CORRECT": 14,
-            "PROBABLY_CORRECT": 6,
-            "INCORRECT": 14,
-            "UNASSESSED": 204,
+            "PROBABLY_CORRECT": 10,
+            "INCORRECT": 17,
+            "UNASSESSED": 197,
             "NOT_EVALUATED": 294
           }
         },
@@ -56,8 +56,8 @@
           },
           "groundTruthAvailability": {
             "ORIGINAL_GROUND_TRUTH_AVAILABLE": 37,
-            "EXTENDED_GROUND_TRUTH_ONLY": 12,
-            "GROUND_TRUTH_UNAVAILABLE": 474,
+            "EXTENDED_GROUND_TRUTH_ONLY": 23,
+            "GROUND_TRUTH_UNAVAILABLE": 463,
             "NOT_EVALUATED": 0
           }
         },
@@ -71,25 +71,33 @@
           "DETERMINED": 238,
           "UNDETERMINED": 235,
           "ORIGINAL_GROUND_TRUTH_AVAILABLE": 37,
-          "EXTENDED_GROUND_TRUTH_ONLY": 12,
-          "GROUND_TRUTH_UNAVAILABLE": 483,
+          "EXTENDED_GROUND_TRUTH_ONLY": 23,
+          "GROUND_TRUTH_UNAVAILABLE": 472,
           "CORRECT": 14,
-          "PROBABLY_CORRECT": 6,
-          "INCORRECT": 14,
-          "UNASSESSED": 204
+          "PROBABLY_CORRECT": 10,
+          "INCORRECT": 17,
+          "UNASSESSED": 197
         },
+        "invalidSecdfdTypes": [
+          "Data",
+          "entity",
+          "data-provider",
+          "Predicate",
+          "data"
+        ],
         "conclusionCombinations": {
-          "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 230,
-          "UNDEFINED and GROUND_TRUTH_UNAVAILABLE": 35,
-          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 196,
+          "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 229,
+          "UNDEFINED and GROUND_TRUTH_UNAVAILABLE": 32,
+          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 189,
           "UNDEFINED and ORIGINAL_GROUND_TRUTH_AVAILABLE": 5,
-          "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and EXTENDED_GROUND_TRUTH_ONLY": 4,
+          "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and EXTENDED_GROUND_TRUTH_ONLY": 5,
+          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT": 10,
           "DEFINED_AND_CONSISTENT and INVALID and GROUND_TRUTH_UNAVAILABLE": 14,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and CORRECT": 14,
           "DEFINED_AND_CONSISTENT and ALMOST_VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 8,
-          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT": 6,
-          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT": 2,
+          "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT": 5,
           "DEFINED_AND_CONSISTENT and ALMOST_VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and INCORRECT": 6,
+          "UNDEFINED and EXTENDED_GROUND_TRUTH_ONLY": 3,
           "DEFINED_AND_CONSISTENT and INVALID and ORIGINAL_GROUND_TRUTH_AVAILABLE": 5,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and INCORRECT": 6,
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE": 1
@@ -205,6 +213,14 @@
           "INCORRECT": 2,
           "UNASSESSED": 532
         },
+        "invalidSecdfdTypes": [
+          "data",
+          "Data",
+          "data-provider",
+          "controller",
+          "entity",
+          "factory"
+        ],
         "conclusionCombinations": {
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 706,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 518,
@@ -337,6 +353,20 @@
           "INCORRECT": 3,
           "UNASSESSED": 2824
         },
+        "invalidSecdfdTypes": [
+          "Data",
+          "data-provider",
+          "Utility",
+          "get",
+          "entity",
+          "Command",
+          "Controller",
+          "set",
+          "Data Provider",
+          "data",
+          "controller",
+          "data-store"
+        ],
         "conclusionCombinations": {
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 3802,
           "DEFINED_AND_CONSISTENT and INVALID and GROUND_TRUTH_UNAVAILABLE": 431,
@@ -538,6 +568,11 @@
           "INCORRECT": 14,
           "UNASSESSED": 202
         },
+        "invalidSecdfdTypes": [
+          "Data",
+          "data-provider",
+          "entity"
+        ],
         "conclusionCombinations": {
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 282,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 201,
@@ -707,6 +742,14 @@
           "INCORRECT": 8,
           "UNASSESSED": 272
         },
+        "invalidSecdfdTypes": [
+          "Data",
+          "Utility",
+          "Empty",
+          "entity",
+          "data-provider",
+          "empty"
+        ],
         "conclusionCombinations": {
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 376,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 261,
@@ -841,6 +884,11 @@
           "INCORRECT": 46,
           "UNASSESSED": 417
         },
+        "invalidSecdfdTypes": [
+          "data-provider",
+          "Data",
+          "commander"
+        ],
         "conclusionCombinations": {
           "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 504,
           "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 406,
@@ -939,11 +987,11 @@
   ],
   "summary": {
     "reportCount": 6,
-    "totalGroundtruthEntries": 275,
+    "totalGroundtruthEntries": 286,
     "totalOriginalGroundtruthEntries": 263,
-    "totalExtendedGroundtruthEntries": 12,
-    "totalExtendedGroundtruthInputEntries": 275,
-    "groundtruthEntriesWithSabo": 275,
+    "totalExtendedGroundtruthEntries": 23,
+    "totalExtendedGroundtruthInputEntries": 286,
+    "groundtruthEntriesWithSabo": 286,
     "totalSaboNodes": 14644,
     "totalCheckedNodes": 12213,
     "totalReportEntries": 12341,
@@ -970,15 +1018,15 @@
       },
       "groundTruthAvailability": {
         "ORIGINAL_GROUND_TRUTH_AVAILABLE": 203,
-        "EXTENDED_GROUND_TRUTH_ONLY": 12,
-        "GROUND_TRUTH_UNAVAILABLE": 12126,
+        "EXTENDED_GROUND_TRUTH_ONLY": 23,
+        "GROUND_TRUTH_UNAVAILABLE": 12115,
         "NOT_EVALUATED": 0
       },
       "mappingCorrectness": {
         "CORRECT": 79,
-        "PROBABLY_CORRECT": 6,
-        "INCORRECT": 87,
-        "UNASSESSED": 4451,
+        "PROBABLY_CORRECT": 10,
+        "INCORRECT": 90,
+        "UNASSESSED": 4444,
         "NOT_EVALUATED": 7718
       }
     },
@@ -991,8 +1039,8 @@
       },
       "groundTruthAvailability": {
         "ORIGINAL_GROUND_TRUTH_AVAILABLE": 203,
-        "EXTENDED_GROUND_TRUTH_ONLY": 12,
-        "GROUND_TRUTH_UNAVAILABLE": 11998,
+        "EXTENDED_GROUND_TRUTH_ONLY": 23,
+        "GROUND_TRUTH_UNAVAILABLE": 11987,
         "NOT_EVALUATED": 0
       }
     },
@@ -1006,25 +1054,45 @@
       "DETERMINED": 4623,
       "UNDETERMINED": 5908,
       "ORIGINAL_GROUND_TRUTH_AVAILABLE": 203,
-      "EXTENDED_GROUND_TRUTH_ONLY": 12,
-      "GROUND_TRUTH_UNAVAILABLE": 12126,
+      "EXTENDED_GROUND_TRUTH_ONLY": 23,
+      "GROUND_TRUTH_UNAVAILABLE": 12115,
       "CORRECT": 79,
-      "PROBABLY_CORRECT": 6,
-      "INCORRECT": 87,
-      "UNASSESSED": 4451
+      "PROBABLY_CORRECT": 10,
+      "INCORRECT": 90,
+      "UNASSESSED": 4444
     },
+    "invalidSecdfdTypes": [
+      "Data",
+      "entity",
+      "data-provider",
+      "Predicate",
+      "data",
+      "controller",
+      "factory",
+      "Utility",
+      "get",
+      "Command",
+      "Controller",
+      "set",
+      "Data Provider",
+      "data-store",
+      "Empty",
+      "empty",
+      "commander"
+    ],
     "conclusionCombinations": {
-      "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 5900,
-      "UNDEFINED and GROUND_TRUTH_UNAVAILABLE": 1113,
-      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 4365,
+      "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 5899,
+      "UNDEFINED and GROUND_TRUTH_UNAVAILABLE": 1110,
+      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 4358,
       "UNDEFINED and ORIGINAL_GROUND_TRUTH_AVAILABLE": 20,
-      "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and EXTENDED_GROUND_TRUTH_ONLY": 4,
+      "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and EXTENDED_GROUND_TRUTH_ONLY": 5,
+      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT": 10,
       "DEFINED_AND_CONSISTENT and INVALID and GROUND_TRUTH_UNAVAILABLE": 660,
       "DEFINED_AND_CONSISTENT and VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and CORRECT": 78,
       "DEFINED_AND_CONSISTENT and ALMOST_VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 86,
-      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT": 6,
-      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT": 2,
+      "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT": 5,
       "DEFINED_AND_CONSISTENT and ALMOST_VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and INCORRECT": 10,
+      "UNDEFINED and EXTENDED_GROUND_TRUTH_ONLY": 3,
       "DEFINED_AND_CONSISTENT and INVALID and ORIGINAL_GROUND_TRUTH_AVAILABLE": 15,
       "DEFINED_AND_CONSISTENT and VALID and DETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE and INCORRECT": 75,
       "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and ORIGINAL_GROUND_TRUTH_AVAILABLE": 4,
@@ -3197,25 +3265,29 @@
       "expectedSecdfdTarget": "secdfd:Asset",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "PROBABLY_CORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "PROBABLY_CORRECT"
       ]
     },
     {
@@ -4721,22 +4793,26 @@
       "expectedSecdfdTarget": null,
       "hasImplementsEdge": false,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Process"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Process"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "UNDEFINED",
         "validity": null,
         "determination": null,
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
         "mappingCorrectness": null
       },
-      "conclusion": "UNDEFINED and GROUND_TRUTH_UNAVAILABLE",
+      "conclusion": "UNDEFINED and EXTENDED_GROUND_TRUTH_ONLY",
       "conclusions": [
         "UNDEFINED",
-        "GROUND_TRUTH_UNAVAILABLE"
+        "EXTENDED_GROUND_TRUTH_ONLY"
       ]
     },
     {
@@ -6030,25 +6106,29 @@
       "expectedSecdfdTarget": "secdfd:Asset",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "PROBABLY_CORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "PROBABLY_CORRECT"
       ]
     },
     {
@@ -16665,22 +16745,26 @@
       "expectedSecdfdTarget": null,
       "hasImplementsEdge": false,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Process"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Process"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "UNDEFINED",
         "validity": null,
         "determination": null,
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
         "mappingCorrectness": null
       },
-      "conclusion": "UNDEFINED and GROUND_TRUTH_UNAVAILABLE",
+      "conclusion": "UNDEFINED and EXTENDED_GROUND_TRUTH_ONLY",
       "conclusions": [
         "UNDEFINED",
-        "GROUND_TRUTH_UNAVAILABLE"
+        "EXTENDED_GROUND_TRUTH_ONLY"
       ]
     },
     {
@@ -17684,22 +17768,26 @@
       "expectedSecdfdTarget": null,
       "hasImplementsEdge": false,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Process"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Process"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "UNDEFINED",
         "validity": null,
         "determination": null,
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
         "mappingCorrectness": null
       },
-      "conclusion": "UNDEFINED and GROUND_TRUTH_UNAVAILABLE",
+      "conclusion": "UNDEFINED and EXTENDED_GROUND_TRUTH_ONLY",
       "conclusions": [
         "UNDEFINED",
-        "GROUND_TRUTH_UNAVAILABLE"
+        "EXTENDED_GROUND_TRUTH_ONLY"
       ]
     },
     {
@@ -18946,25 +19034,29 @@
       "expectedSecdfdTarget": "secdfd:Process",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Process"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Process"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "PROBABLY_CORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "PROBABLY_CORRECT"
       ]
     },
     {
@@ -18989,25 +19081,29 @@
       "expectedSecdfdTarget": "secdfd:Flow",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "INCORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "INCORRECT"
       ]
     },
     {
@@ -19250,24 +19346,28 @@
       "expectedSecdfdTarget": "secdfd:Undetermined",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "UNDETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
         "mappingCorrectness": null
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and EXTENDED_GROUND_TRUTH_ONLY",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "UNDETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE"
+        "EXTENDED_GROUND_TRUTH_ONLY"
       ]
     },
     {
@@ -19376,25 +19476,29 @@
       "expectedSecdfdTarget": "secdfd:Flow",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "INCORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "INCORRECT"
       ]
     },
     {
@@ -19546,25 +19650,29 @@
       "expectedSecdfdTarget": "secdfd:External Entity",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "External Entity"
+      ],
+      "groundTruthSecdfdTypes": [
+        "External Entity"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "PROBABLY_CORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and PROBABLY_CORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "PROBABLY_CORRECT"
       ]
     },
     {
@@ -19674,25 +19782,29 @@
       "expectedSecdfdTarget": "secdfd:Flow",
       "hasImplementsEdge": true,
       "originalGroundTruthSecdfdTypes": [],
-      "extendedGroundTruthSecdfdTypes": [],
-      "groundTruthSecdfdTypes": [],
+      "extendedGroundTruthSecdfdTypes": [
+        "Asset"
+      ],
+      "groundTruthSecdfdTypes": [
+        "Asset"
+      ],
       "originalGroundTruthEntryCount": 0,
-      "extendedGroundTruthEntryCount": 0,
-      "groundTruthEntryCount": 0,
+      "extendedGroundTruthEntryCount": 1,
+      "groundTruthEntryCount": 1,
       "outcomes": {
         "assignmentAndConsistency": "DEFINED_AND_CONSISTENT",
         "validity": "VALID",
         "determination": "DETERMINED",
-        "groundTruthAvailability": "GROUND_TRUTH_UNAVAILABLE",
-        "mappingCorrectness": "UNASSESSED"
+        "groundTruthAvailability": "EXTENDED_GROUND_TRUTH_ONLY",
+        "mappingCorrectness": "INCORRECT"
       },
-      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED",
+      "conclusion": "DEFINED_AND_CONSISTENT and VALID and DETERMINED and EXTENDED_GROUND_TRUTH_ONLY and INCORRECT",
       "conclusions": [
         "DEFINED_AND_CONSISTENT",
         "VALID",
         "DETERMINED",
-        "GROUND_TRUTH_UNAVAILABLE",
-        "UNASSESSED"
+        "EXTENDED_GROUND_TRUTH_ONLY",
+        "INCORRECT"
       ]
     },
     {

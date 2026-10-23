@@ -80,6 +80,11 @@
       "INCORRECT": 46,
       "UNASSESSED": 417
     },
+    "invalidSecdfdTypes": [
+      "data-provider",
+      "Data",
+      "commander"
+    ],
     "conclusionCombinations": {
       "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 504,
       "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 406,

@@ -80,6 +80,14 @@
       "INCORRECT": 8,
       "UNASSESSED": 272
     },
+    "invalidSecdfdTypes": [
+      "Data",
+      "Utility",
+      "Empty",
+      "entity",
+      "data-provider",
+      "empty"
+    ],
     "conclusionCombinations": {
       "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 376,
       "DEFINED_AND_CONSISTENT and VALID and DETERMINED and GROUND_TRUTH_UNAVAILABLE and UNASSESSED": 261,

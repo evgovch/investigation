@@ -80,6 +80,20 @@
       "INCORRECT": 3,
       "UNASSESSED": 2824
     },
+    "invalidSecdfdTypes": [
+      "Data",
+      "data-provider",
+      "Utility",
+      "get",
+      "entity",
+      "Command",
+      "Controller",
+      "set",
+      "Data Provider",
+      "data",
+      "controller",
+      "data-store"
+    ],
     "conclusionCombinations": {
       "DEFINED_AND_CONSISTENT and VALID and UNDETERMINED and GROUND_TRUTH_UNAVAILABLE": 3802,
       "DEFINED_AND_CONSISTENT and INVALID and GROUND_TRUTH_UNAVAILABLE": 431,
